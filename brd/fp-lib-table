@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name STX-3200)(type KiCad)(uri "$(KIPRJMOD)/lib/STX-3200.pretty")(options "")(descr ""))
+  (lib (name logo-ex)(type KiCad)(uri "$(KIPRJMOD)/lib/logo-ex.pretty")(options "")(descr ""))
+)

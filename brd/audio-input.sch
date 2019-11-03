@@ -1,0 +1,567 @@
+EESchema Schematic File Version 2
+LIBS:references
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:TB6612FNG
+LIBS:silent-audio-motion-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 4
+Title "Silent Audio Motion"
+Date "2019-11-03"
+Rev "release-v0.1A"
+Comp "EX arte electrónico y experimental"
+Comment1 ""
+Comment2 "Revised by: R. García"
+Comment3 "Drawn by: R. García"
+Comment4 "Designed by: R. García"
+$EndDescr
+$Comp
+L MCP6004 U6
+U 2 1 5DA48258
+P 5050 4250
+AR Path="/5DA48168/5DA48258" Ref="U6"  Part="2" 
+AR Path="/5DA4FC1E/5DA48258" Ref="U7"  Part="2" 
+F 0 "U6" H 5050 4050 50  0000 L CNN
+F 1 "MCP6004" H 5050 4400 50  0000 L CNN
+F 2 "Housings_SSOP:TSSOP-14_4.4x5mm_Pitch0.65mm" H 5000 4350 50  0001 C CNN
+F 3 "lib/datasheets/MCP6004.pdf" H 5100 4450 50  0001 C CNN
+F 4 "Microchip Technology" H 5050 4250 60  0001 C CNN "Manufacturer"
+F 5 "MCP6004-I/ST" H 5050 4250 60  0001 C CNN "Manufacturer Part Number"
+	2    5050 4250
+	1    0    0    1   
+$EndComp
+$Comp
+L R R11
+U 1 1 5DA482D7
+P 4600 4650
+AR Path="/5DA48168/5DA482D7" Ref="R11"  Part="1" 
+AR Path="/5DA4FC1E/5DA482D7" Ref="R21"  Part="1" 
+F 0 "R11" H 4700 4800 50  0000 C CNN
+F 1 "680R" V 4600 4650 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4530 4650 50  0001 C CNN
+F 3 "" H 4600 4650 50  0001 C CNN
+F 4 "Bourns" H 4600 4650 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-FX-6800ELF" H 4600 4650 60  0001 C CNN "Manufacturer Part Number"
+	1    4600 4650
+	1    0    0    -1  
+$EndComp
+Text HLabel 3850 2350 0    60   Input ~ 0
+AUDIO_IN
+Wire Wire Line
+	4600 4500 4600 4350
+Wire Wire Line
+	4600 4350 4750 4350
+$Comp
+L R R15
+U 1 1 5DA48CC8
+P 6000 4650
+AR Path="/5DA48168/5DA48CC8" Ref="R15"  Part="1" 
+AR Path="/5DA4FC1E/5DA48CC8" Ref="R25"  Part="1" 
+F 0 "R15" H 6100 4800 50  0000 C CNN
+F 1 "100R" V 6000 4650 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5930 4650 50  0001 C CNN
+F 3 "" H 6000 4650 50  0001 C CNN
+F 4 "Bourns" H 6000 4650 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-FX-1000ELF" H 6000 4650 60  0001 C CNN "Manufacturer Part Number"
+	1    6000 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R9
+U 1 1 5DA48D92
+P 4300 4150
+AR Path="/5DA48168/5DA48D92" Ref="R9"  Part="1" 
+AR Path="/5DA4FC1E/5DA48D92" Ref="R19"  Part="1" 
+F 0 "R9" V 4250 4350 50  0000 C CNN
+F 1 "2k" V 4300 4150 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4230 4150 50  0001 C CNN
+F 3 "" H 4300 4150 50  0001 C CNN
+F 4 "Bourns" V 4300 4150 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-FX-2001ELF" V 4300 4150 60  0001 C CNN "Manufacturer Part Number"
+	1    4300 4150
+	0    1    1    0   
+$EndComp
+$Comp
+L R R12
+U 1 1 5DA48DF2
+P 5000 3500
+AR Path="/5DA48168/5DA48DF2" Ref="R12"  Part="1" 
+AR Path="/5DA4FC1E/5DA48DF2" Ref="R22"  Part="1" 
+F 0 "R12" V 4950 3700 50  0000 C CNN
+F 1 "1k" V 5000 3500 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4930 3500 50  0001 C CNN
+F 3 "" H 5000 3500 50  0001 C CNN
+F 4 "Bourns" V 5000 3500 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-FX-1001ELF" V 5000 3500 60  0001 C CNN "Manufacturer Part Number"
+	1    5000 3500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4850 3500 4600 3500
+Wire Wire Line
+	4600 3500 4600 4150
+Wire Wire Line
+	4450 4150 4750 4150
+Wire Wire Line
+	4850 3750 4600 3750
+Connection ~ 4600 3750
+Connection ~ 4600 4150
+Wire Wire Line
+	5350 4250 5550 4250
+Wire Wire Line
+	5150 3750 5450 3750
+Wire Wire Line
+	5450 3750 5450 4250
+Connection ~ 5450 4250
+Wire Wire Line
+	5150 3500 6000 3500
+$Comp
+L R R7
+U 1 1 5DA49319
+P 4000 4650
+AR Path="/5DA48168/5DA49319" Ref="R7"  Part="1" 
+AR Path="/5DA4FC1E/5DA49319" Ref="R17"  Part="1" 
+F 0 "R7" H 4100 4800 50  0000 C CNN
+F 1 "10k" V 4000 4650 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 3930 4650 50  0001 C CNN
+F 3 "" H 4000 4650 50  0001 C CNN
+F 4 "Bourns" H 4000 4650 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-JW-103ELF" H 4000 4650 60  0001 C CNN "Manufacturer Part Number"
+	1    4000 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L MCP6004 U6
+U 1 1 5DA496BC
+P 5050 2450
+AR Path="/5DA48168/5DA496BC" Ref="U6"  Part="1" 
+AR Path="/5DA4FC1E/5DA496BC" Ref="U7"  Part="1" 
+F 0 "U6" H 5050 2250 50  0000 L CNN
+F 1 "MCP6004" H 5050 2600 50  0000 L CNN
+F 2 "Housings_SSOP:TSSOP-14_4.4x5mm_Pitch0.65mm" H 5000 2550 50  0001 C CNN
+F 3 "lib/datasheets/MCP6004.pdf" H 5100 2650 50  0001 C CNN
+F 4 "Microchip Technology" H 5050 2450 60  0001 C CNN "Manufacturer"
+F 5 "MCP6004-I/ST" H 5050 2450 60  0001 C CNN "Manufacturer Part Number"
+	1    5050 2450
+	1    0    0    1   
+$EndComp
+$Comp
+L R R10
+U 1 1 5DA496C2
+P 4600 2850
+AR Path="/5DA48168/5DA496C2" Ref="R10"  Part="1" 
+AR Path="/5DA4FC1E/5DA496C2" Ref="R20"  Part="1" 
+F 0 "R10" H 4700 3000 50  0000 C CNN
+F 1 "680R" V 4600 2850 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4530 2850 50  0001 C CNN
+F 3 "" H 4600 2850 50  0001 C CNN
+F 4 "Bourns" H 4600 2850 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-FX-6800ELF" H 4600 2850 60  0001 C CNN "Manufacturer Part Number"
+	1    4600 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L D_Schottky D4
+U 1 1 5DA496C8
+P 5650 2450
+AR Path="/5DA48168/5DA496C8" Ref="D4"  Part="1" 
+AR Path="/5DA4FC1E/5DA496C8" Ref="D7"  Part="1" 
+F 0 "D4" H 5500 2500 50  0000 C CNN
+F 1 "BAT54" H 5650 2350 50  0000 C CNN
+F 2 "Diodes_SMD:D_SOD-123" H 5650 2450 50  0001 C CNN
+F 3 "lib/datasheets/BAT54GW.pdf" H 5650 2450 50  0001 C CNN
+F 4 "Nexperia" H 5650 2450 60  0001 C CNN "Manufacturer"
+F 5 "BAT54GWJ" H 5650 2450 60  0001 C CNN "Manufacturer Part Number"
+	1    5650 2450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 2700 4600 2550
+Wire Wire Line
+	4600 2550 4750 2550
+$Comp
+L R R14
+U 1 1 5DA496D0
+P 5950 2850
+AR Path="/5DA48168/5DA496D0" Ref="R14"  Part="1" 
+AR Path="/5DA4FC1E/5DA496D0" Ref="R24"  Part="1" 
+F 0 "R14" H 6050 3000 50  0000 C CNN
+F 1 "3k3" V 5950 2850 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5880 2850 50  0001 C CNN
+F 3 "" H 5950 2850 50  0001 C CNN
+F 4 "Bourns" H 5950 2850 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-FX-3301ELF" H 5950 2850 60  0001 C CNN "Manufacturer Part Number"
+	1    5950 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R8
+U 1 1 5DA496D6
+P 4300 2350
+AR Path="/5DA48168/5DA496D6" Ref="R8"  Part="1" 
+AR Path="/5DA4FC1E/5DA496D6" Ref="R18"  Part="1" 
+F 0 "R8" V 4250 2550 50  0000 C CNN
+F 1 "2k" V 4300 2350 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4230 2350 50  0001 C CNN
+F 3 "" H 4300 2350 50  0001 C CNN
+F 4 "Bourns" V 4300 2350 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-FX-2001ELF" V 4300 2350 60  0001 C CNN "Manufacturer Part Number"
+	1    4300 2350
+	0    1    1    0   
+$EndComp
+$Comp
+L R R13
+U 1 1 5DA496DC
+P 5250 2050
+AR Path="/5DA48168/5DA496DC" Ref="R13"  Part="1" 
+AR Path="/5DA4FC1E/5DA496DC" Ref="R23"  Part="1" 
+F 0 "R13" V 5200 2250 50  0000 C CNN
+F 1 "1k" V 5250 2050 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5180 2050 50  0001 C CNN
+F 3 "" H 5250 2050 50  0001 C CNN
+F 4 "Bourns" V 5250 2050 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-FX-1001ELF" V 5250 2050 60  0001 C CNN "Manufacturer Part Number"
+	1    5250 2050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5100 2050 4600 2050
+Wire Wire Line
+	5400 2050 5950 2050
+Wire Wire Line
+	5350 2450 5500 2450
+Wire Wire Line
+	4450 2350 4750 2350
+Wire Wire Line
+	4600 2050 4600 2350
+Connection ~ 4600 2350
+$Comp
+L GND #PWR043
+U 1 1 5DA49A66
+P 6000 4950
+AR Path="/5DA48168/5DA49A66" Ref="#PWR043"  Part="1" 
+AR Path="/5DA4FC1E/5DA49A66" Ref="#PWR053"  Part="1" 
+F 0 "#PWR043" H 6000 4700 50  0001 C CNN
+F 1 "GND" H 6000 4800 50  0000 C CNN
+F 2 "" H 6000 4950 50  0001 C CNN
+F 3 "" H 6000 4950 50  0001 C CNN
+	1    6000 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR044
+U 1 1 5DA49B2E
+P 4600 4950
+AR Path="/5DA48168/5DA49B2E" Ref="#PWR044"  Part="1" 
+AR Path="/5DA4FC1E/5DA49B2E" Ref="#PWR054"  Part="1" 
+F 0 "#PWR044" H 4600 4700 50  0001 C CNN
+F 1 "GND" H 4600 4800 50  0000 C CNN
+F 2 "" H 4600 4950 50  0001 C CNN
+F 3 "" H 4600 4950 50  0001 C CNN
+	1    4600 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 4950 6000 4800
+Wire Wire Line
+	4600 4950 4600 4800
+$Comp
+L MCP6004 U6
+U 3 1 5DA49C44
+P 7100 4150
+AR Path="/5DA48168/5DA49C44" Ref="U6"  Part="3" 
+AR Path="/5DA4FC1E/5DA49C44" Ref="U7"  Part="3" 
+F 0 "U6" H 7100 4300 50  0000 L CNN
+F 1 "MCP6004" H 7100 4000 50  0000 L CNN
+F 2 "Housings_SSOP:TSSOP-14_4.4x5mm_Pitch0.65mm" H 7050 4250 50  0001 C CNN
+F 3 "lib/datasheets/MCP6004.pdf" H 7150 4350 50  0001 C CNN
+F 4 "Microchip Technology" H 7100 4150 60  0001 C CNN "Manufacturer"
+F 5 "MCP6004-I/ST" H 7100 4150 60  0001 C CNN "Manufacturer Part Number"
+	3    7100 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L POT R16
+U 1 1 5DA49DEC
+P 6350 4650
+AR Path="/5DA48168/5DA49DEC" Ref="R16"  Part="1" 
+AR Path="/5DA4FC1E/5DA49DEC" Ref="R26"  Part="1" 
+F 0 "R16" H 6450 4800 50  0000 C CNN
+F 1 "20k" V 6350 4650 50  0000 C CNN
+F 2 "Potentiometers:Potentiometer_Trimmer_Bourns_3299P" H 6350 4650 50  0001 C CNN
+F 3 "" H 6350 4650 50  0001 C CNN
+F 4 "BI Technologies" H 6350 4650 60  0001 C CNN "Manufacturer"
+F 5 "36KR20KLF" H 6350 4650 60  0001 C CNN "Manufacturer Part Number"
+	1    6350 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR045
+U 1 1 5DA49F10
+P 7000 4600
+AR Path="/5DA48168/5DA49F10" Ref="#PWR045"  Part="1" 
+AR Path="/5DA4FC1E/5DA49F10" Ref="#PWR055"  Part="1" 
+F 0 "#PWR045" H 7000 4350 50  0001 C CNN
+F 1 "GND" H 7000 4450 50  0000 C CNN
+F 2 "" H 7000 4600 50  0001 C CNN
+F 3 "" H 7000 4600 50  0001 C CNN
+	1    7000 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR046
+U 1 1 5DA49F3D
+P 6500 3200
+AR Path="/5DA48168/5DA49F3D" Ref="#PWR046"  Part="1" 
+AR Path="/5DA4FC1E/5DA49F3D" Ref="#PWR056"  Part="1" 
+F 0 "#PWR046" H 6500 3050 50  0001 C CNN
+F 1 "+5V" H 6500 3340 50  0000 C CNN
+F 2 "" H 6500 3200 50  0001 C CNN
+F 3 "" H 6500 3200 50  0001 C CNN
+	1    6500 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L MCP6004 U6
+U 4 1 5DA4A24A
+P 6600 2550
+AR Path="/5DA48168/5DA4A24A" Ref="U6"  Part="4" 
+AR Path="/5DA4FC1E/5DA4A24A" Ref="U7"  Part="4" 
+F 0 "U6" H 6600 2700 50  0000 L CNN
+F 1 "MCP6004" H 6600 2400 50  0000 L CNN
+F 2 "Housings_SSOP:TSSOP-14_4.4x5mm_Pitch0.65mm" H 6550 2650 50  0001 C CNN
+F 3 "lib/datasheets/MCP6004.pdf" H 6650 2750 50  0001 C CNN
+F 4 "Microchip Technology" H 6600 2550 60  0001 C CNN "Manufacturer"
+F 5 "MCP6004-I/ST" H 6600 2550 60  0001 C CNN "Manufacturer Part Number"
+	4    6600 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 2650 6150 2650
+Wire Wire Line
+	6150 2650 6150 2950
+Wire Wire Line
+	6150 2950 7050 2950
+Wire Wire Line
+	7050 2950 7050 2550
+Wire Wire Line
+	6900 2550 7600 2550
+$Comp
+L GND #PWR047
+U 1 1 5DA4AA4B
+P 5950 3150
+AR Path="/5DA48168/5DA4AA4B" Ref="#PWR047"  Part="1" 
+AR Path="/5DA4FC1E/5DA4AA4B" Ref="#PWR057"  Part="1" 
+F 0 "#PWR047" H 5950 2900 50  0001 C CNN
+F 1 "GND" H 5950 3000 50  0000 C CNN
+F 2 "" H 5950 3150 50  0001 C CNN
+F 3 "" H 5950 3150 50  0001 C CNN
+	1    5950 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR048
+U 1 1 5DA4AAEF
+P 4600 3150
+AR Path="/5DA48168/5DA4AAEF" Ref="#PWR048"  Part="1" 
+AR Path="/5DA4FC1E/5DA4AAEF" Ref="#PWR058"  Part="1" 
+F 0 "#PWR048" H 4600 2900 50  0001 C CNN
+F 1 "GND" H 4600 3000 50  0000 C CNN
+F 2 "" H 4600 3150 50  0001 C CNN
+F 3 "" H 4600 3150 50  0001 C CNN
+	1    4600 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 3150 5950 3000
+Wire Wire Line
+	4600 3000 4600 3150
+$Comp
+L GND #PWR049
+U 1 1 5DA4B110
+P 4000 4950
+AR Path="/5DA48168/5DA4B110" Ref="#PWR049"  Part="1" 
+AR Path="/5DA4FC1E/5DA4B110" Ref="#PWR059"  Part="1" 
+F 0 "#PWR049" H 4000 4700 50  0001 C CNN
+F 1 "GND" H 4000 4800 50  0000 C CNN
+F 2 "" H 4000 4950 50  0001 C CNN
+F 3 "" H 4000 4950 50  0001 C CNN
+	1    4000 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 4950 4000 4800
+Wire Wire Line
+	3850 2350 4150 2350
+Wire Wire Line
+	4000 4500 4000 2350
+Connection ~ 4000 2350
+Wire Wire Line
+	4150 4150 4000 4150
+Connection ~ 4000 4150
+Wire Wire Line
+	7000 4600 7000 4450
+Wire Wire Line
+	7000 3850 7000 3700
+$Comp
+L GND #PWR050
+U 1 1 5DA4CFC0
+P 6350 4950
+AR Path="/5DA48168/5DA4CFC0" Ref="#PWR050"  Part="1" 
+AR Path="/5DA4FC1E/5DA4CFC0" Ref="#PWR060"  Part="1" 
+F 0 "#PWR050" H 6350 4700 50  0001 C CNN
+F 1 "GND" H 6350 4800 50  0000 C CNN
+F 2 "" H 6350 4950 50  0001 C CNN
+F 3 "" H 6350 4950 50  0001 C CNN
+	1    6350 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 4950 6350 4800
+Wire Wire Line
+	6350 4500 6350 4350
+Wire Wire Line
+	6000 3500 6000 4500
+Wire Wire Line
+	5850 4250 6000 4250
+Connection ~ 6000 4250
+Wire Wire Line
+	6500 4650 6650 4650
+Wire Wire Line
+	6650 4650 6650 4250
+Wire Wire Line
+	6650 4250 6800 4250
+Wire Wire Line
+	6800 4050 6000 4050
+Connection ~ 6000 4050
+Wire Wire Line
+	5950 2050 5950 2700
+Wire Wire Line
+	5800 2450 6300 2450
+Connection ~ 5950 2450
+Text HLabel 7600 4150 2    60   Output ~ 0
+TRIGGER_OUT
+Text HLabel 7600 2550 2    60   Output ~ 0
+FULL_WAVE_OUT
+Wire Wire Line
+	7600 4150 7400 4150
+Connection ~ 7050 2550
+$Comp
+L C C15
+U 1 1 5DA51ABC
+P 6500 3500
+AR Path="/5DA48168/5DA51ABC" Ref="C15"  Part="1" 
+AR Path="/5DA4FC1E/5DA51ABC" Ref="C16"  Part="1" 
+F 0 "C15" H 6525 3600 50  0000 L CNN
+F 1 "100nF" H 6525 3400 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 6538 3350 50  0001 C CNN
+F 3 "" H 6500 3500 50  0001 C CNN
+F 4 "Kemet" H 6500 3500 60  0001 C CNN "Manufacturer"
+F 5 "C0805C104J5RACTU" H 6500 3500 60  0001 C CNN "Manufacturer Part Number"
+	1    6500 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR051
+U 1 1 5DA51BFC
+P 7000 3700
+AR Path="/5DA48168/5DA51BFC" Ref="#PWR051"  Part="1" 
+AR Path="/5DA4FC1E/5DA51BFC" Ref="#PWR061"  Part="1" 
+F 0 "#PWR051" H 7000 3550 50  0001 C CNN
+F 1 "+5V" H 7000 3840 50  0000 C CNN
+F 2 "" H 7000 3700 50  0001 C CNN
+F 3 "" H 7000 3700 50  0001 C CNN
+	1    7000 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR052
+U 1 1 5DA51C4F
+P 6500 3800
+AR Path="/5DA48168/5DA51C4F" Ref="#PWR052"  Part="1" 
+AR Path="/5DA4FC1E/5DA51C4F" Ref="#PWR062"  Part="1" 
+F 0 "#PWR052" H 6500 3550 50  0001 C CNN
+F 1 "GND" H 6500 3650 50  0000 C CNN
+F 2 "" H 6500 3800 50  0001 C CNN
+F 3 "" H 6500 3800 50  0001 C CNN
+	1    6500 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 3200 6500 3350
+Wire Wire Line
+	6500 3650 6500 3800
+NoConn ~ 4950 4550
+NoConn ~ 4950 3950
+NoConn ~ 4950 2750
+NoConn ~ 6500 2850
+NoConn ~ 6500 2250
+NoConn ~ 4950 2150
+$Comp
+L D_Schottky D3
+U 1 1 5DA746D9
+P 5000 3750
+AR Path="/5DA48168/5DA746D9" Ref="D3"  Part="1" 
+AR Path="/5DA4FC1E/5DA746D9" Ref="D6"  Part="1" 
+F 0 "D3" H 4850 3800 50  0000 C CNN
+F 1 "BAT54" H 5000 3650 50  0000 C CNN
+F 2 "Diodes_SMD:D_SOD-123" H 5000 3750 50  0001 C CNN
+F 3 "lib/datasheets/BAT54GW.pdf" H 5000 3750 50  0001 C CNN
+F 4 "Nexperia" H 5000 3750 60  0001 C CNN "Manufacturer"
+F 5 "BAT54GWJ" H 5000 3750 60  0001 C CNN "Manufacturer Part Number"
+	1    5000 3750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L D_Schottky D5
+U 1 1 5DA748E2
+P 5700 4250
+AR Path="/5DA48168/5DA748E2" Ref="D5"  Part="1" 
+AR Path="/5DA4FC1E/5DA748E2" Ref="D8"  Part="1" 
+F 0 "D5" H 5550 4300 50  0000 C CNN
+F 1 "BAT54" H 5700 4150 50  0000 C CNN
+F 2 "Diodes_SMD:D_SOD-123" H 5700 4250 50  0001 C CNN
+F 3 "lib/datasheets/BAT54GW.pdf" H 5700 4250 50  0001 C CNN
+F 4 "Nexperia" H 5700 4250 60  0001 C CNN "Manufacturer"
+F 5 "BAT54GWJ" H 5700 4250 60  0001 C CNN "Manufacturer Part Number"
+	1    5700 4250
+	-1   0    0    -1  
+$EndComp
+Text HLabel 6300 4350 0    60   Input ~ 0
+REF
+Wire Wire Line
+	6350 4350 6300 4350
+$EndSCHEMATC

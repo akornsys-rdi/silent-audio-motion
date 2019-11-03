@@ -1,0 +1,1167 @@
+EESchema Schematic File Version 2
+LIBS:references
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:TB6612FNG
+LIBS:silent-audio-motion-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 4
+Title "Silent Audio Motion"
+Date "2019-11-03"
+Rev "release-v0.1A"
+Comp "EX arte electrónico y experimental"
+Comment1 ""
+Comment2 "Revised by: R. García"
+Comment3 "Drawn by: R. García"
+Comment4 "Designed by: R. García"
+$EndDescr
+$Sheet
+S 1850 2500 1600 600 
+U 5DA46734
+F0 "Power supply" 60
+F1 "power-supply.sch" 60
+$EndSheet
+$Comp
+L Audio-Jack-3 J1
+U 1 1 5DA4810F
+P 1100 4200
+F 0 "J1" H 1050 4375 50  0000 C CNN
+F 1 "AUDIO_IN" H 1100 4100 50  0000 C CNN
+F 2 "STX-3200:STX-3200-3" H 1350 4300 50  0001 C CNN
+F 3 "lib/datasheets/STX-3200-3CB.pdf" H 1350 4300 50  0001 C CNN
+F 4 "Kycon" H 1100 4200 60  0001 C CNN "Manufacturer"
+F 5 "STX-3200-3NB" H 1100 4200 60  0001 C CNN "Manufacturer Part Number"
+	1    1100 4200
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 1850 4300 1600 600 
+U 5DA48168
+F0 "Audio input L" 60
+F1 "audio-input.sch" 60
+F2 "AUDIO_IN" I L 1850 4600 60 
+F3 "TRIGGER_OUT" O R 3450 4750 60 
+F4 "FULL_WAVE_OUT" O R 3450 4600 60 
+F5 "REF" I L 1850 4750 60 
+$EndSheet
+$Comp
+L ATMEGA328P-AU U2
+U 1 1 5DA4F31B
+P 5650 3700
+F 0 "U2" H 4900 4950 50  0000 L BNN
+F 1 "ATMEGA328P-AU" H 6050 2300 50  0000 L BNN
+F 2 "Housings_QFP:TQFP-32_7x7mm_Pitch0.8mm" H 5650 3700 50  0001 C CIN
+F 3 "lib/datasheets/ATMEGA328P.pdf" H 5650 3700 50  0001 C CNN
+F 4 "Microchip Technology" H 5650 3700 60  0001 C CNN "Manufacturer"
+F 5 "ATMEGA328P-AU" H 5650 3700 60  0001 C CNN "Manufacturer Part Number"
+	1    5650 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L TB6612FNG U3
+U 1 1 5DA4F360
+P 9700 3500
+F 0 "U3" H 9300 4300 50  0000 C CNN
+F 1 "TB6612FNG" H 9700 3500 50  0000 C CNN
+F 2 "Housings_SSOP:SSOP-24_5.3x8.2mm_Pitch0.65mm" H 9700 3500 50  0001 C CNN
+F 3 "lib/datasheets/TB6612FNG.pdf" H 9700 3500 50  0001 C CNN
+F 4 "Toshiba" H 9700 3500 60  0001 C CNN "Manufacturer"
+F 5 "TB6612FNG,C,8,EL" H 9700 3500 60  0001 C CNN "Manufacturer Part Number"
+	1    9700 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Screw_Terminal_01x02 J4
+U 1 1 5DA4F690
+P 10850 3200
+F 0 "J4" H 10850 3300 50  0000 C CNN
+F 1 "OUT_L" V 10950 3150 50  0000 C CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS1.5-2pol" H 10850 3200 50  0001 C CNN
+F 3 "lib/datasheets/1888687.pdf" H 10850 3200 50  0001 C CNN
+F 4 "Phoenix Contact" H 10850 3200 60  0001 C CNN "Manufacturer"
+F 5 "1888687" H 10850 3200 60  0001 C CNN "Manufacturer Part Number"
+	1    10850 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Screw_Terminal_01x02 J5
+U 1 1 5DA4F749
+P 10850 3800
+F 0 "J5" H 10850 3600 50  0000 C CNN
+F 1 "OUT_R" V 10950 3750 50  0000 C CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS1.5-2pol" H 10850 3800 50  0001 C CNN
+F 3 "lib/datasheets/1888687.pdf" H 10850 3800 50  0001 C CNN
+F 4 "Phoenix Contact" H 10850 3800 60  0001 C CNN "Manufacturer"
+F 5 "1888687" H 10850 3800 60  0001 C CNN "Manufacturer Part Number"
+	1    10850 3800
+	1    0    0    1   
+$EndComp
+$Sheet
+S 1850 3400 1600 600 
+U 5DA4FC1E
+F0 "Audio input R" 60
+F1 "audio-input.sch" 60
+F2 "AUDIO_IN" I L 1850 3700 60 
+F3 "TRIGGER_OUT" O R 3450 3850 60 
+F4 "FULL_WAVE_OUT" O R 3450 3700 60 
+F5 "REF" I L 1850 3850 60 
+$EndSheet
+Wire Wire Line
+	6650 4500 6950 4500
+Wire Wire Line
+	6950 4700 6650 4700
+Wire Wire Line
+	6950 4800 6650 4800
+Wire Wire Line
+	6650 2900 7050 2900
+Wire Wire Line
+	6650 2800 6950 2800
+Wire Wire Line
+	6650 2700 6950 2700
+Wire Wire Line
+	6950 2600 6650 2600
+$Comp
+L Conn_02x03_Odd_Even J2
+U 1 1 5DA512FF
+P 6650 1950
+F 0 "J2" H 6700 2150 50  0000 C CNN
+F 1 "ISP" H 6700 1750 50  0000 C CNN
+F 2 "Connectors_IDC:IDC-Header_2x03_Pitch2.54mm_Straight" H 6650 1950 50  0001 C CNN
+F 3 "" H 6650 1950 50  0001 C CNN
+	1    6650 1950
+	-1   0    0    -1  
+$EndComp
+$Comp
+L L_Core_Ferrite L1
+U 1 1 5DA5248A
+P 4300 2700
+F 0 "L1" H 4200 2600 50  0000 C CNN
+F 1 "Choke" V 4410 2700 50  0000 C CNN
+F 2 "Inductors_SMD:L_0805_HandSoldering" H 4300 2700 50  0001 C CNN
+F 3 "" H 4300 2700 50  0001 C CNN
+F 4 "Murata Electronics" H 4300 2700 60  0001 C CNN "Manufacturer"
+F 5 "BLM21PG331SN1D" H 4300 2700 60  0001 C CNN "Manufacturer Part Number"
+	1    4300 2700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Crystal Y1
+U 1 1 5DA5279D
+P 7700 3250
+F 0 "Y1" V 7550 3350 50  0000 C CNN
+F 1 "16MHz" V 7850 3400 50  0000 C CNN
+F 2 "Crystals:Crystal_SMD_HC49-SD" H 7700 3250 50  0001 C CNN
+F 3 "" H 7700 3250 50  0001 C CNN
+F 4 "Abracon" V 7700 3250 60  0001 C CNN "Manufacturer"
+F 5 "ABLS-16.000MHZ-B4-T" V 7700 3250 60  0001 C CNN "Manufacturer Part Number"
+	1    7700 3250
+	0    1    1    0   
+$EndComp
+$Comp
+L R R5
+U 1 1 5DA52846
+P 8000 3250
+F 0 "R5" H 8100 3400 50  0000 C CNN
+F 1 "1M" V 8000 3250 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 7930 3250 50  0001 C CNN
+F 3 "" H 8000 3250 50  0001 C CNN
+F 4 "Bourns" H 8000 3250 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-JW-105ELF" H 8000 3250 60  0001 C CNN "Manufacturer Part Number"
+	1    8000 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C6
+U 1 1 5DA52899
+P 7700 3700
+F 0 "C6" H 7725 3800 50  0000 L CNN
+F 1 "18pF" H 7725 3600 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 7738 3550 50  0001 C CNN
+F 3 "" H 7700 3700 50  0001 C CNN
+F 4 "Kemet" H 7700 3700 60  0001 C CNN "Manufacturer"
+F 5 "C0805C180J5GAC" H 7700 3700 60  0001 C CNN "Manufacturer Part Number"
+	1    7700 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C5
+U 1 1 5DA5290C
+P 7400 3700
+F 0 "C5" H 7425 3800 50  0000 L CNN
+F 1 "18pF" H 7425 3600 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 7438 3550 50  0001 C CNN
+F 3 "" H 7400 3700 50  0001 C CNN
+F 4 "Kemet" H 7400 3700 60  0001 C CNN "Manufacturer"
+F 5 "C0805C180J5GAC" H 7400 3700 60  0001 C CNN "Manufacturer Part Number"
+	1    7400 3700
+	1    0    0    -1  
+$EndComp
+Text Label 6950 4800 2    50   ~ 0
+AIN1
+Text Label 6950 4700 2    50   ~ 0
+AIN2
+Text Label 6950 4500 2    50   ~ 0
+APWM
+Text Label 6950 2600 2    50   ~ 0
+STBY
+Text Label 6950 2700 2    50   ~ 0
+BIN1
+Text Label 6950 2800 2    50   ~ 0
+BIN2
+Text Label 6950 2900 2    50   ~ 0
+BPWM
+$Comp
+L GND #PWR01
+U 1 1 5DA5B0FC
+P 4600 5050
+F 0 "#PWR01" H 4600 4800 50  0001 C CNN
+F 1 "GND" H 4600 4900 50  0000 C CNN
+F 2 "" H 4600 5050 50  0001 C CNN
+F 3 "" H 4600 5050 50  0001 C CNN
+	1    4600 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR02
+U 1 1 5DA5B150
+P 4600 2350
+F 0 "#PWR02" H 4600 2200 50  0001 C CNN
+F 1 "+5V" H 4600 2490 50  0000 C CNN
+F 2 "" H 4600 2350 50  0001 C CNN
+F 3 "" H 4600 2350 50  0001 C CNN
+	1    4600 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L VDDA #PWR03
+U 1 1 5DA5B1C4
+P 4600 3100
+F 0 "#PWR03" H 4600 2950 50  0001 C CNN
+F 1 "VDDA" H 4600 3250 50  0000 C CNN
+F 2 "" H 4600 3100 50  0001 C CNN
+F 3 "" H 4600 3100 50  0001 C CNN
+	1    4600 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 4700 4600 5050
+Wire Wire Line
+	4600 4700 4750 4700
+Wire Wire Line
+	4750 4900 4600 4900
+Connection ~ 4600 4900
+Wire Wire Line
+	4750 4800 4600 4800
+Connection ~ 4600 4800
+Wire Wire Line
+	4750 2900 4300 2900
+Wire Wire Line
+	4300 2850 4300 3300
+Wire Wire Line
+	4600 2700 4750 2700
+Wire Wire Line
+	4600 2350 4600 2700
+Wire Wire Line
+	4750 2600 4600 2600
+Connection ~ 4600 2600
+Wire Wire Line
+	4600 3100 4600 3300
+Wire Wire Line
+	4750 3200 4600 3200
+Connection ~ 4600 3200
+Connection ~ 4300 2900
+$Comp
+L GND #PWR04
+U 1 1 5DA5BACE
+P 4600 3700
+F 0 "#PWR04" H 4600 3450 50  0001 C CNN
+F 1 "GND" H 4600 3550 50  0000 C CNN
+F 2 "" H 4600 3700 50  0001 C CNN
+F 3 "" H 4600 3700 50  0001 C CNN
+	1    4600 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR05
+U 1 1 5DA5BB27
+P 4300 3700
+F 0 "#PWR05" H 4300 3450 50  0001 C CNN
+F 1 "GND" H 4300 3550 50  0000 C CNN
+F 2 "" H 4300 3700 50  0001 C CNN
+F 3 "" H 4300 3700 50  0001 C CNN
+	1    4300 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 3700 4600 3600
+Wire Wire Line
+	4300 3700 4300 3600
+$Comp
+L GND #PWR06
+U 1 1 5DA5BCF3
+P 5700 2200
+F 0 "#PWR06" H 5700 1950 50  0001 C CNN
+F 1 "GND" H 5700 2050 50  0000 C CNN
+F 2 "" H 5700 2200 50  0001 C CNN
+F 3 "" H 5700 2200 50  0001 C CNN
+	1    5700 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR07
+U 1 1 5DA5BD4C
+P 5700 1600
+F 0 "#PWR07" H 5700 1450 50  0001 C CNN
+F 1 "+5V" H 5700 1740 50  0000 C CNN
+F 2 "" H 5700 1600 50  0001 C CNN
+F 3 "" H 5700 1600 50  0001 C CNN
+	1    5700 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 2550 4300 2450
+Wire Wire Line
+	4300 2450 4600 2450
+Connection ~ 4600 2450
+Wire Wire Line
+	5700 1600 5700 1750
+Wire Wire Line
+	5700 2050 5700 2200
+$Comp
+L GND #PWR08
+U 1 1 5DA5C11E
+P 6200 2200
+F 0 "#PWR08" H 6200 1950 50  0001 C CNN
+F 1 "GND" H 6200 2050 50  0000 C CNN
+F 2 "" H 6200 2200 50  0001 C CNN
+F 3 "" H 6200 2200 50  0001 C CNN
+	1    6200 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR09
+U 1 1 5DA5C177
+P 6200 1700
+F 0 "#PWR09" H 6200 1550 50  0001 C CNN
+F 1 "+5V" H 6200 1840 50  0000 C CNN
+F 2 "" H 6200 1700 50  0001 C CNN
+F 3 "" H 6200 1700 50  0001 C CNN
+	1    6200 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR010
+U 1 1 5DA5C860
+P 7400 3950
+F 0 "#PWR010" H 7400 3700 50  0001 C CNN
+F 1 "GND" H 7400 3800 50  0000 C CNN
+F 2 "" H 7400 3950 50  0001 C CNN
+F 3 "" H 7400 3950 50  0001 C CNN
+	1    7400 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR011
+U 1 1 5DA5C8B9
+P 7700 3950
+F 0 "#PWR011" H 7700 3700 50  0001 C CNN
+F 1 "GND" H 7700 3800 50  0000 C CNN
+F 2 "" H 7700 3950 50  0001 C CNN
+F 3 "" H 7700 3950 50  0001 C CNN
+	1    7700 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 3200 7500 3200
+Wire Wire Line
+	7500 3200 7500 3000
+Wire Wire Line
+	7500 3000 8000 3000
+Wire Wire Line
+	8000 3000 8000 3100
+Wire Wire Line
+	6650 3300 7500 3300
+Wire Wire Line
+	7500 3300 7500 3500
+Wire Wire Line
+	7500 3500 8000 3500
+Wire Wire Line
+	8000 3500 8000 3400
+Wire Wire Line
+	7700 3100 7700 3000
+Connection ~ 7700 3000
+Wire Wire Line
+	7700 3400 7700 3550
+Connection ~ 7700 3500
+Wire Wire Line
+	7400 3550 7400 3200
+Connection ~ 7400 3200
+Wire Wire Line
+	7700 3950 7700 3850
+Wire Wire Line
+	7400 3950 7400 3850
+Wire Wire Line
+	6200 2200 6200 2050
+Wire Wire Line
+	6200 2050 6350 2050
+Wire Wire Line
+	6200 1700 6200 1850
+Wire Wire Line
+	6200 1850 6350 1850
+Wire Wire Line
+	7050 2900 7050 2400
+Wire Wire Line
+	7050 2400 6050 2400
+Wire Wire Line
+	6050 2400 6050 1950
+Wire Wire Line
+	6050 1950 6350 1950
+Wire Wire Line
+	6850 2050 7150 2050
+Wire Wire Line
+	7150 1700 7150 4050
+Wire Wire Line
+	7150 4050 6650 4050
+Wire Wire Line
+	6650 3000 7250 3000
+Wire Wire Line
+	7250 3000 7250 1850
+Wire Wire Line
+	7250 1850 6850 1850
+Wire Wire Line
+	6650 3100 7350 3100
+Wire Wire Line
+	7350 3100 7350 1950
+Wire Wire Line
+	7350 1950 6850 1950
+$Comp
+L R R3
+U 1 1 5DA5DB6F
+P 7150 1550
+F 0 "R3" H 7250 1700 50  0000 C CNN
+F 1 "10k" V 7150 1550 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 7080 1550 50  0001 C CNN
+F 3 "" H 7150 1550 50  0001 C CNN
+F 4 "Bourns" H 7150 1550 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-JW-103ELF" H 7150 1550 60  0001 C CNN "Manufacturer Part Number"
+	1    7150 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR012
+U 1 1 5DA5DC78
+P 7150 1250
+F 0 "#PWR012" H 7150 1100 50  0001 C CNN
+F 1 "+5V" H 7150 1390 50  0000 C CNN
+F 2 "" H 7150 1250 50  0001 C CNN
+F 3 "" H 7150 1250 50  0001 C CNN
+	1    7150 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7150 1250 7150 1400
+Connection ~ 7150 2050
+$Comp
+L LED D1
+U 1 1 5DA5E270
+P 8000 4400
+F 0 "D1" H 7800 4450 50  0000 C CNN
+F 1 "ORANGE" H 8050 4300 50  0000 C CNN
+F 2 "LEDs:LED_0805" H 8000 4400 50  0001 C CNN
+F 3 "lib/datasheets/LO-R976.pdf" H 8000 4400 50  0001 C CNN
+F 4 "OSRAM Opto Semiconductors" H 8000 4400 60  0001 C CNN "Manufacturer"
+F 5 "LO R976-PS-1" H 8000 4400 60  0001 C CNN "Manufacturer Part Number"
+	1    8000 4400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L R R4
+U 1 1 5DA5E2DB
+P 7550 4400
+F 0 "R4" V 7500 4600 50  0000 C CNN
+F 1 "470R" V 7550 4400 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 7480 4400 50  0001 C CNN
+F 3 "" H 7550 4400 50  0001 C CNN
+F 4 "Bourns" V 7550 4400 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-JW-471ELF" V 7550 4400 60  0001 C CNN "Manufacturer Part Number"
+	1    7550 4400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6650 4200 8300 4200
+Wire Wire Line
+	6650 4300 8200 4300
+Wire Wire Line
+	8200 4300 8200 4050
+$Comp
+L GND #PWR013
+U 1 1 5DA5FD1C
+P 8400 4550
+F 0 "#PWR013" H 8400 4300 50  0001 C CNN
+F 1 "GND" H 8400 4400 50  0000 C CNN
+F 2 "" H 8400 4550 50  0001 C CNN
+F 3 "" H 8400 4550 50  0001 C CNN
+	1    8400 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8400 4050 8400 4550
+Wire Wire Line
+	8150 4400 8400 4400
+Connection ~ 8400 4400
+Wire Wire Line
+	6650 4400 7400 4400
+Wire Wire Line
+	7700 4400 7850 4400
+Wire Wire Line
+	10350 3200 10650 3200
+Wire Wire Line
+	10350 3300 10650 3300
+Wire Wire Line
+	10350 3400 10500 3400
+Wire Wire Line
+	10500 3400 10500 3300
+Connection ~ 10500 3300
+Wire Wire Line
+	10350 3100 10500 3100
+Wire Wire Line
+	10500 3100 10500 3200
+Connection ~ 10500 3200
+Wire Wire Line
+	10350 3800 10650 3800
+Wire Wire Line
+	10350 3900 10500 3900
+Wire Wire Line
+	10500 3900 10500 3800
+Connection ~ 10500 3800
+Wire Wire Line
+	10350 3700 10650 3700
+Wire Wire Line
+	10350 3600 10500 3600
+Wire Wire Line
+	10500 3600 10500 3700
+Connection ~ 10500 3700
+$Comp
+L GND #PWR014
+U 1 1 5DA61318
+P 9700 4750
+F 0 "#PWR014" H 9700 4500 50  0001 C CNN
+F 1 "GND" H 9700 4600 50  0000 C CNN
+F 2 "" H 9700 4750 50  0001 C CNN
+F 3 "" H 9700 4750 50  0001 C CNN
+	1    9700 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 4450 9500 4600
+Wire Wire Line
+	9500 4600 10000 4600
+Wire Wire Line
+	10000 4600 10000 4450
+Wire Wire Line
+	9900 4450 9900 4600
+Connection ~ 9900 4600
+Wire Wire Line
+	9800 4450 9800 4600
+Connection ~ 9800 4600
+Wire Wire Line
+	9700 4450 9700 4750
+Connection ~ 9700 4600
+$Comp
+L +12V #PWR015
+U 1 1 5DA61805
+P 9900 2250
+F 0 "#PWR015" H 9900 2100 50  0001 C CNN
+F 1 "+12V" H 9900 2390 50  0000 C CNN
+F 2 "" H 9900 2250 50  0001 C CNN
+F 3 "" H 9900 2250 50  0001 C CNN
+	1    9900 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR016
+U 1 1 5DA61935
+P 9500 2250
+F 0 "#PWR016" H 9500 2100 50  0001 C CNN
+F 1 "+5V" H 9500 2390 50  0000 C CNN
+F 2 "" H 9500 2250 50  0001 C CNN
+F 3 "" H 9500 2250 50  0001 C CNN
+	1    9500 2250
+	1    0    0    -1  
+$EndComp
+Text Label 8750 3100 0    50   ~ 0
+AIN1
+Text Label 8750 3200 0    50   ~ 0
+AIN2
+Text Label 8750 3300 0    50   ~ 0
+APWM
+Text Label 8750 3700 0    50   ~ 0
+BPWM
+Text Label 8750 3500 0    50   ~ 0
+BIN1
+Text Label 8750 3600 0    50   ~ 0
+BIN2
+Text Label 8750 3900 0    50   ~ 0
+STBY
+Wire Wire Line
+	9050 3900 8750 3900
+Wire Wire Line
+	9050 3700 8750 3700
+Wire Wire Line
+	9050 3600 8750 3600
+Wire Wire Line
+	9050 3500 8750 3500
+Wire Wire Line
+	9050 3300 8750 3300
+Wire Wire Line
+	9050 3200 8750 3200
+Wire Wire Line
+	9050 3100 8750 3100
+$Comp
+L CP C9
+U 1 1 5DA6347C
+P 10750 2200
+F 0 "C9" H 10775 2300 50  0000 L CNN
+F 1 "10µF" H 10775 2100 50  0000 L CNN
+F 2 "Capacitors_SMD:CP_Elec_4x5.3" H 10788 2050 50  0001 C CNN
+F 3 "" H 10750 2200 50  0001 C CNN
+F 4 "Nichicon" H 10750 2200 60  0001 C CNN "Manufacturer"
+F 5 "UWJ1C100MCL1GB" H 10750 2200 60  0001 C CNN "Manufacturer Part Number"
+	1    10750 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L +12V #PWR017
+U 1 1 5DA63ADE
+P 10600 1850
+F 0 "#PWR017" H 10600 1700 50  0001 C CNN
+F 1 "+12V" H 10600 1990 50  0000 C CNN
+F 2 "" H 10600 1850 50  0001 C CNN
+F 3 "" H 10600 1850 50  0001 C CNN
+	1    10600 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR018
+U 1 1 5DA63B52
+P 10150 1950
+F 0 "#PWR018" H 10150 1800 50  0001 C CNN
+F 1 "+5V" H 10150 2090 50  0000 C CNN
+F 2 "" H 10150 1950 50  0001 C CNN
+F 3 "" H 10150 1950 50  0001 C CNN
+	1    10150 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR019
+U 1 1 5DA63C18
+P 10150 2500
+F 0 "#PWR019" H 10150 2250 50  0001 C CNN
+F 1 "GND" H 10150 2350 50  0000 C CNN
+F 2 "" H 10150 2500 50  0001 C CNN
+F 3 "" H 10150 2500 50  0001 C CNN
+	1    10150 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR020
+U 1 1 5DA63C8C
+P 10600 2550
+F 0 "#PWR020" H 10600 2300 50  0001 C CNN
+F 1 "GND" H 10600 2400 50  0000 C CNN
+F 2 "" H 10600 2550 50  0001 C CNN
+F 3 "" H 10600 2550 50  0001 C CNN
+	1    10600 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9800 2550 9800 2400
+Wire Wire Line
+	9800 2400 10000 2400
+Wire Wire Line
+	10000 2400 10000 2550
+Wire Wire Line
+	9900 2250 9900 2550
+Connection ~ 9900 2400
+Wire Wire Line
+	9500 2250 9500 2550
+Wire Wire Line
+	10150 1950 10150 2050
+Wire Wire Line
+	10150 2350 10150 2500
+Wire Wire Line
+	10450 2350 10450 2450
+Wire Wire Line
+	10450 2450 10750 2450
+Wire Wire Line
+	10750 2450 10750 2350
+Wire Wire Line
+	10450 2050 10450 1950
+Wire Wire Line
+	10450 1950 10750 1950
+Wire Wire Line
+	10750 1950 10750 2050
+Wire Wire Line
+	10600 1850 10600 1950
+Connection ~ 10600 1950
+Wire Wire Line
+	10600 2550 10600 2450
+Connection ~ 10600 2450
+$Comp
+L GND #PWR021
+U 1 1 5DA6715C
+P 900 4450
+F 0 "#PWR021" H 900 4200 50  0001 C CNN
+F 1 "GND" H 900 4300 50  0000 C CNN
+F 2 "" H 900 4450 50  0001 C CNN
+F 3 "" H 900 4450 50  0001 C CNN
+	1    900  4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	900  4300 900  4450
+Wire Wire Line
+	1300 4100 1500 4100
+Wire Wire Line
+	1500 4100 1500 3700
+Wire Wire Line
+	1500 3700 1850 3700
+Wire Wire Line
+	1300 4200 1500 4200
+Wire Wire Line
+	1500 4200 1500 4600
+Wire Wire Line
+	1500 4600 1850 4600
+Text Label 3750 3700 2    50   ~ 0
+FW_R
+Text Label 3750 3850 2    50   ~ 0
+TRG_R
+Text Label 3750 4600 2    50   ~ 0
+FW_L
+Text Label 3750 4750 2    50   ~ 0
+TRG_L
+Text Label 6950 3750 2    50   ~ 0
+FW_R
+Text Label 6950 3850 2    50   ~ 0
+TRG_R
+Text Label 6950 3450 2    50   ~ 0
+FW_L
+Text Label 6950 3550 2    50   ~ 0
+TRG_L
+Wire Wire Line
+	3450 4750 3750 4750
+Wire Wire Line
+	3450 4600 3750 4600
+Wire Wire Line
+	3450 3850 3750 3850
+Wire Wire Line
+	3450 3700 3750 3700
+$Comp
+L POT R1
+U 1 1 5DA6A305
+P 2550 6950
+F 0 "R1" H 2650 7100 50  0000 C CNN
+F 1 "20k" V 2550 6950 50  0000 C CNN
+F 2 "Potentiometers:Potentiometer_Trimmer_Bourns_3299P" H 2550 6950 50  0001 C CNN
+F 3 "" H 2550 6950 50  0001 C CNN
+F 4 "BI Technologies" H 2550 6950 60  0001 C CNN "Manufacturer"
+F 5 "36KR20KLF" H 2550 6950 60  0001 C CNN "Manufacturer Part Number"
+	1    2550 6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L MCP6004 U1
+U 3 1 5DA6A3FC
+P 3250 7050
+F 0 "U1" H 3250 7250 50  0000 L CNN
+F 1 "MCP6004" H 3250 6850 50  0000 L CNN
+F 2 "Housings_SSOP:TSSOP-14_4.4x5mm_Pitch0.65mm" H 3200 7150 50  0001 C CNN
+F 3 "lib/datasheets/MCP6004.pdf" H 3300 7250 50  0001 C CNN
+F 4 "Microchip Technology" H 3250 7050 60  0001 C CNN "Manufacturer"
+F 5 "MCP6004-I/ST" H 3250 7050 60  0001 C CNN "Manufacturer Part Number"
+	3    3250 7050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 7150 2800 7150
+Wire Wire Line
+	2800 7150 2800 7450
+Wire Wire Line
+	2800 7450 3700 7450
+Wire Wire Line
+	3700 7450 3700 7050
+Wire Wire Line
+	3550 7050 4000 7050
+$Comp
+L GND #PWR022
+U 1 1 5DA6AF98
+P 2550 7250
+F 0 "#PWR022" H 2550 7000 50  0001 C CNN
+F 1 "GND" H 2550 7100 50  0000 C CNN
+F 2 "" H 2550 7250 50  0001 C CNN
+F 3 "" H 2550 7250 50  0001 C CNN
+	1    2550 7250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 7100 2550 7250
+Wire Wire Line
+	2700 6950 2950 6950
+Text Label 4000 7050 2    50   ~ 0
+ADJ_L
+Connection ~ 3700 7050
+$Comp
+L POT R2
+U 1 1 5DA6BBDD
+P 2550 5900
+F 0 "R2" H 2650 6050 50  0000 C CNN
+F 1 "20k" V 2550 5900 50  0000 C CNN
+F 2 "Potentiometers:Potentiometer_Trimmer_Bourns_3299P" H 2550 5900 50  0001 C CNN
+F 3 "" H 2550 5900 50  0001 C CNN
+F 4 "BI Technologies" H 2550 5900 60  0001 C CNN "Manufacturer"
+F 5 "36KR20KLF" H 2550 5900 60  0001 C CNN "Manufacturer Part Number"
+	1    2550 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L MCP6004 U1
+U 4 1 5DA6BBE3
+P 3250 6000
+F 0 "U1" H 3250 6200 50  0000 L CNN
+F 1 "MCP6004" H 3250 5800 50  0000 L CNN
+F 2 "Housings_SSOP:TSSOP-14_4.4x5mm_Pitch0.65mm" H 3200 6100 50  0001 C CNN
+F 3 "lib/datasheets/MCP6004.pdf" H 3300 6200 50  0001 C CNN
+F 4 "Microchip Technology" H 3250 6000 60  0001 C CNN "Manufacturer"
+F 5 "MCP6004-I/ST" H 3250 6000 60  0001 C CNN "Manufacturer Part Number"
+	4    3250 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 6100 2800 6100
+Wire Wire Line
+	2800 6100 2800 6400
+Wire Wire Line
+	2800 6400 3700 6400
+Wire Wire Line
+	3700 6400 3700 6000
+Wire Wire Line
+	3550 6000 4000 6000
+$Comp
+L GND #PWR023
+U 1 1 5DA6BBF4
+P 2550 6200
+F 0 "#PWR023" H 2550 5950 50  0001 C CNN
+F 1 "GND" H 2550 6050 50  0000 C CNN
+F 2 "" H 2550 6200 50  0001 C CNN
+F 3 "" H 2550 6200 50  0001 C CNN
+	1    2550 6200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 6050 2550 6200
+Wire Wire Line
+	2700 5900 2950 5900
+Text Label 4000 6000 2    50   ~ 0
+ADJ_R
+Connection ~ 3700 6000
+Text Label 6950 3650 2    50   ~ 0
+ADJ_L
+Text Label 6950 3950 2    50   ~ 0
+ADJ_R
+Wire Wire Line
+	6650 3950 6950 3950
+Wire Wire Line
+	6650 3850 6950 3850
+Wire Wire Line
+	6650 3750 6950 3750
+Wire Wire Line
+	6650 3650 6950 3650
+Wire Wire Line
+	6650 3550 6950 3550
+Wire Wire Line
+	6650 3450 6950 3450
+NoConn ~ 4750 4050
+NoConn ~ 4750 3950
+NoConn ~ 6650 4900
+NoConn ~ 6650 4600
+$Comp
+L MCP6004 U1
+U 2 1 5DA6D2AE
+P 1750 7050
+F 0 "U1" H 1750 7250 50  0000 L CNN
+F 1 "MCP6004" H 1750 6850 50  0000 L CNN
+F 2 "Housings_SSOP:TSSOP-14_4.4x5mm_Pitch0.65mm" H 1700 7150 50  0001 C CNN
+F 3 "lib/datasheets/MCP6004.pdf" H 1800 7250 50  0001 C CNN
+F 4 "Microchip Technology" H 1750 7050 60  0001 C CNN "Manufacturer"
+F 5 "MCP6004-I/ST" H 1750 7050 60  0001 C CNN "Manufacturer Part Number"
+	2    1750 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR024
+U 1 1 5DA6D8C1
+P 1650 5550
+F 0 "#PWR024" H 1650 5400 50  0001 C CNN
+F 1 "+5V" H 1650 5690 50  0000 C CNN
+F 2 "" H 1650 5550 50  0001 C CNN
+F 3 "" H 1650 5550 50  0001 C CNN
+	1    1650 5550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 5700 1650 5550
+Wire Wire Line
+	1450 7150 1300 7150
+Wire Wire Line
+	1300 7150 1300 7450
+Wire Wire Line
+	1300 7450 2200 7450
+Wire Wire Line
+	2200 7450 2200 6650
+Wire Wire Line
+	2200 7050 2050 7050
+$Comp
+L VDDA #PWR025
+U 1 1 5DA6DF11
+P 1300 6800
+F 0 "#PWR025" H 1300 6650 50  0001 C CNN
+F 1 "VDDA" H 1300 6950 50  0000 C CNN
+F 2 "" H 1300 6800 50  0001 C CNN
+F 3 "" H 1300 6800 50  0001 C CNN
+	1    1300 6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 6800 1300 6950
+Wire Wire Line
+	1300 6950 1450 6950
+$Comp
+L MCP6004 U1
+U 1 1 5DA6E2C0
+P 1750 6000
+F 0 "U1" H 1750 6200 50  0000 L CNN
+F 1 "MCP6004" H 1750 5800 50  0000 L CNN
+F 2 "Housings_SSOP:TSSOP-14_4.4x5mm_Pitch0.65mm" H 1700 6100 50  0001 C CNN
+F 3 "lib/datasheets/MCP6004.pdf" H 1800 6200 50  0001 C CNN
+F 4 "Microchip Technology" H 1750 6000 60  0001 C CNN "Manufacturer"
+F 5 "MCP6004-I/ST" H 1750 6000 60  0001 C CNN "Manufacturer Part Number"
+	1    1750 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR026
+U 1 1 5DA6E2C6
+P 1650 7500
+F 0 "#PWR026" H 1650 7250 50  0001 C CNN
+F 1 "GND" H 1650 7350 50  0000 C CNN
+F 2 "" H 1650 7500 50  0001 C CNN
+F 3 "" H 1650 7500 50  0001 C CNN
+	1    1650 7500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 7350 1650 7500
+Wire Wire Line
+	1450 6100 1300 6100
+Wire Wire Line
+	1300 6100 1300 6400
+Wire Wire Line
+	2200 5600 2200 6400
+Wire Wire Line
+	2200 6000 2050 6000
+$Comp
+L VDDA #PWR027
+U 1 1 5DA6E2D9
+P 1300 5750
+F 0 "#PWR027" H 1300 5600 50  0001 C CNN
+F 1 "VDDA" H 1300 5900 50  0000 C CNN
+F 2 "" H 1300 5750 50  0001 C CNN
+F 3 "" H 1300 5750 50  0001 C CNN
+	1    1300 5750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 5750 1300 5900
+Wire Wire Line
+	1300 5900 1450 5900
+Wire Wire Line
+	2200 6400 1300 6400
+NoConn ~ 3150 6300
+NoConn ~ 3150 5700
+NoConn ~ 1650 6300
+NoConn ~ 1650 6750
+NoConn ~ 3150 7350
+NoConn ~ 3150 6750
+Wire Wire Line
+	2550 5750 2550 5600
+Wire Wire Line
+	2550 5600 2200 5600
+Connection ~ 2200 6000
+Wire Wire Line
+	2550 6800 2550 6650
+Wire Wire Line
+	2550 6650 2200 6650
+Connection ~ 2200 7050
+$Comp
+L C C1
+U 1 1 5DA71E4A
+P 850 6500
+F 0 "C1" H 875 6600 50  0000 L CNN
+F 1 "100nF" H 875 6400 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 888 6350 50  0001 C CNN
+F 3 "" H 850 6500 50  0001 C CNN
+F 4 "Kemet" H 850 6500 60  0001 C CNN "Manufacturer"
+F 5 "C0805C104J5RACTU" H 850 6500 60  0001 C CNN "Manufacturer Part Number"
+	1    850  6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR028
+U 1 1 5DA71E50
+P 850 6800
+F 0 "#PWR028" H 850 6550 50  0001 C CNN
+F 1 "GND" H 850 6650 50  0000 C CNN
+F 2 "" H 850 6800 50  0001 C CNN
+F 3 "" H 850 6800 50  0001 C CNN
+	1    850  6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR029
+U 1 1 5DA71E56
+P 850 6200
+F 0 "#PWR029" H 850 6050 50  0001 C CNN
+F 1 "+5V" H 850 6340 50  0000 C CNN
+F 2 "" H 850 6200 50  0001 C CNN
+F 3 "" H 850 6200 50  0001 C CNN
+	1    850  6200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	850  6200 850  6350
+Wire Wire Line
+	850  6650 850  6800
+$Comp
+L C C2
+U 1 1 5DA725A1
+P 4300 3450
+F 0 "C2" H 4325 3550 50  0000 L CNN
+F 1 "100nF" H 4325 3350 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 4338 3300 50  0001 C CNN
+F 3 "" H 4300 3450 50  0001 C CNN
+F 4 "Kemet" H 4300 3450 60  0001 C CNN "Manufacturer"
+F 5 "C0805C104J5RACTU" H 4300 3450 60  0001 C CNN "Manufacturer Part Number"
+	1    4300 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C3
+U 1 1 5DA72851
+P 4600 3450
+F 0 "C3" H 4625 3550 50  0000 L CNN
+F 1 "100nF" H 4625 3350 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 4638 3300 50  0001 C CNN
+F 3 "" H 4600 3450 50  0001 C CNN
+F 4 "Kemet" H 4600 3450 60  0001 C CNN "Manufacturer"
+F 5 "C0805C104J5RACTU" H 4600 3450 60  0001 C CNN "Manufacturer Part Number"
+	1    4600 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C4
+U 1 1 5DA72A55
+P 5700 1900
+F 0 "C4" H 5725 2000 50  0000 L CNN
+F 1 "100nF" H 5725 1800 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 5738 1750 50  0001 C CNN
+F 3 "" H 5700 1900 50  0001 C CNN
+F 4 "Kemet" H 5700 1900 60  0001 C CNN "Manufacturer"
+F 5 "C0805C104J5RACTU" H 5700 1900 60  0001 C CNN "Manufacturer Part Number"
+	1    5700 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C7
+U 1 1 5DA72E5C
+P 10150 2200
+F 0 "C7" H 10175 2300 50  0000 L CNN
+F 1 "100nF" H 10175 2100 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 10188 2050 50  0001 C CNN
+F 3 "" H 10150 2200 50  0001 C CNN
+F 4 "Kemet" H 10150 2200 60  0001 C CNN "Manufacturer"
+F 5 "C0805C104J5RACTU" H 10150 2200 60  0001 C CNN "Manufacturer Part Number"
+	1    10150 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C8
+U 1 1 5DA73168
+P 10450 2200
+F 0 "C8" H 10475 2300 50  0000 L CNN
+F 1 "100nF" H 10475 2100 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 10488 2050 50  0001 C CNN
+F 3 "" H 10450 2200 50  0001 C CNN
+F 4 "Kemet" H 10450 2200 60  0001 C CNN "Manufacturer"
+F 5 "C0805C104J5RACTU" H 10450 2200 60  0001 C CNN "Manufacturer Part Number"
+	1    10450 2200
+	1    0    0    -1  
+$EndComp
+Text Label 2250 6650 0    50   ~ 0
+REF_L
+Text Label 2250 5600 0    50   ~ 0
+REF_R
+Text Label 1600 4750 0    50   ~ 0
+REF_L
+Text Label 1600 3850 0    50   ~ 0
+REF_R
+Wire Wire Line
+	1850 4750 1600 4750
+Wire Wire Line
+	1850 3850 1600 3850
+$Comp
+L Conn_01x03 J3
+U 1 1 5DBD7E87
+P 8300 3850
+F 0 "J3" V 8400 4000 50  0000 C CNN
+F 1 "UART" V 8400 3750 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 8300 3850 50  0001 C CNN
+F 3 "" H 8300 3850 50  0001 C CNN
+	1    8300 3850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8300 4200 8300 4050
+$EndSCHEMATC

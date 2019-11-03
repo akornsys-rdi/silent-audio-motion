@@ -1,0 +1,410 @@
+EESchema Schematic File Version 2
+LIBS:references
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:TB6612FNG
+LIBS:silent-audio-motion-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 4
+Title "Silent Audio Motion"
+Date "2019-10-15"
+Rev "release-v0.1A"
+Comp "Akornsys RDI"
+Comment1 ""
+Comment2 "Revised by: R. García"
+Comment3 "Drawn by: R. García"
+Comment4 "Designed by: R. García"
+$EndDescr
+$Comp
+L Screw_Terminal_01x02 J8
+U 1 1 5DA4675B
+P 3700 3450
+F 0 "J8" H 3700 3250 50  0000 C CNN
+F 1 "POWER" V 3800 3400 50  0000 C CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS1.5-2pol" H 3700 3450 50  0001 C CNN
+F 3 "lib/datasheets/1888687.pdf" H 3700 3450 50  0001 C CNN
+F 4 "Phoenix Contact" H 3700 3450 60  0001 C CNN "Manufacturer"
+F 5 "1888687" H 3700 3450 60  0001 C CNN "Manufacturer Part Number"
+	1    3700 3450
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR030
+U 1 1 5DA467DA
+P 4050 3600
+F 0 "#PWR030" H 4050 3350 50  0001 C CNN
+F 1 "GND" H 4050 3450 50  0000 C CNN
+F 2 "" H 4050 3600 50  0001 C CNN
+F 3 "" H 4050 3600 50  0001 C CNN
+	1    4050 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L +12V #PWR031
+U 1 1 5DA467F0
+P 5150 3200
+F 0 "#PWR031" H 5150 3050 50  0001 C CNN
+F 1 "+12V" H 5150 3340 50  0000 C CNN
+F 2 "" H 5150 3200 50  0001 C CNN
+F 3 "" H 5150 3200 50  0001 C CNN
+	1    5150 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L MC78M05_TO252 U4
+U 1 1 5DA4680A
+P 6150 3350
+F 0 "U4" H 6300 3100 50  0000 C CNN
+F 1 "MC78M05" H 5950 3500 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:TO-252-2" H 6150 3575 50  0001 C CIN
+F 3 "lib/datasheets/MC78M00.pdf" H 6150 3300 50  0001 C CNN
+F 4 "ON Semiconductor" H 6150 3350 60  0001 C CNN "Manufacturer"
+F 5 "MC78M05CDTRKG" H 6150 3350 60  0001 C CNN "Manufacturer Part Number"
+	1    6150 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C11
+U 1 1 5DA46847
+P 5700 3650
+F 0 "C11" H 5725 3750 50  0000 L CNN
+F 1 "330nF" H 5725 3550 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 5738 3500 50  0001 C CNN
+F 3 "" H 5700 3650 50  0001 C CNN
+F 4 "Taiyo Yuden" H 5700 3650 60  0001 C CNN "Manufacturer"
+F 5 "GMK212B7334KG-T" H 5700 3650 60  0001 C CNN "Manufacturer Part Number"
+	1    5700 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L REF3020 U5
+U 1 1 5DA468DD
+P 7700 3800
+F 0 "U5" H 7700 4050 50  0000 C CNN
+F 1 "REF3020" H 7800 3550 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 7700 3350 50  0001 C CNN
+F 3 "lib/datasheets/REF3020.pdf" H 7800 3450 50  0001 C CNN
+F 4 "Texas Instruments" H 7700 3800 60  0001 C CNN "Manufacturer"
+F 5 "REF3020AIDBZR" H 7700 3800 60  0001 C CNN "Manufacturer Part Number"
+	1    7700 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C14
+U 1 1 5DA46918
+P 8150 4100
+F 0 "C14" H 8175 4200 50  0000 L CNN
+F 1 "100nF" H 8175 4000 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 8188 3950 50  0001 C CNN
+F 3 "" H 8150 4100 50  0001 C CNN
+F 4 "Kemet" H 8150 4100 60  0001 C CNN "Manufacturer"
+F 5 "C0805C104J5RACTU" H 8150 4100 60  0001 C CNN "Manufacturer Part Number"
+	1    8150 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C13
+U 1 1 5DA46990
+P 6900 3650
+F 0 "C13" H 6925 3750 50  0000 L CNN
+F 1 "470nF" H 6925 3550 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 6938 3500 50  0001 C CNN
+F 3 "" H 6900 3650 50  0001 C CNN
+F 4 "Taiyo Yuden" H 6900 3650 60  0001 C CNN "Manufacturer"
+F 5 "TMK212BJ474KD-T" H 6900 3650 60  0001 C CNN "Manufacturer Part Number"
+	1    6900 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR032
+U 1 1 5DA46A3A
+P 6600 3200
+F 0 "#PWR032" H 6600 3050 50  0001 C CNN
+F 1 "+5V" H 6600 3340 50  0000 C CNN
+F 2 "" H 6600 3200 50  0001 C CNN
+F 3 "" H 6600 3200 50  0001 C CNN
+	1    6600 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L VDDA #PWR033
+U 1 1 5DA46A5C
+P 8150 3650
+F 0 "#PWR033" H 8150 3500 50  0001 C CNN
+F 1 "VDDA" H 8150 3800 50  0000 C CNN
+F 2 "" H 8150 3650 50  0001 C CNN
+F 3 "" H 8150 3650 50  0001 C CNN
+	1    8150 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 3450 4050 3450
+Wire Wire Line
+	4050 3450 4050 3600
+$Comp
+L GND #PWR034
+U 1 1 5DA46D6E
+P 5700 3950
+F 0 "#PWR034" H 5700 3700 50  0001 C CNN
+F 1 "GND" H 5700 3800 50  0000 C CNN
+F 2 "" H 5700 3950 50  0001 C CNN
+F 3 "" H 5700 3950 50  0001 C CNN
+	1    5700 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 3800 5700 3950
+Wire Wire Line
+	6450 3350 7600 3350
+Wire Wire Line
+	6600 3200 6600 3500
+$Comp
+L GND #PWR035
+U 1 1 5DA46EC3
+P 6600 3950
+F 0 "#PWR035" H 6600 3700 50  0001 C CNN
+F 1 "GND" H 6600 3800 50  0000 C CNN
+F 2 "" H 6600 3950 50  0001 C CNN
+F 3 "" H 6600 3950 50  0001 C CNN
+	1    6600 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 3950 6600 3800
+Connection ~ 6600 3350
+$Comp
+L GND #PWR036
+U 1 1 5DA46F20
+P 6150 3950
+F 0 "#PWR036" H 6150 3700 50  0001 C CNN
+F 1 "GND" H 6150 3800 50  0000 C CNN
+F 2 "" H 6150 3950 50  0001 C CNN
+F 3 "" H 6150 3950 50  0001 C CNN
+	1    6150 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 3650 6150 3950
+Wire Wire Line
+	8000 3800 8150 3800
+Wire Wire Line
+	8150 3650 8150 3950
+Connection ~ 8150 3800
+Wire Wire Line
+	7600 3350 7600 3500
+Wire Wire Line
+	6900 3500 6900 3350
+Connection ~ 6900 3350
+$Comp
+L GND #PWR037
+U 1 1 5DA47167
+P 8150 4400
+F 0 "#PWR037" H 8150 4150 50  0001 C CNN
+F 1 "GND" H 8150 4250 50  0000 C CNN
+F 2 "" H 8150 4400 50  0001 C CNN
+F 3 "" H 8150 4400 50  0001 C CNN
+	1    8150 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR038
+U 1 1 5DA47187
+P 7600 4400
+F 0 "#PWR038" H 7600 4150 50  0001 C CNN
+F 1 "GND" H 7600 4250 50  0000 C CNN
+F 2 "" H 7600 4400 50  0001 C CNN
+F 3 "" H 7600 4400 50  0001 C CNN
+	1    7600 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8150 4400 8150 4250
+Wire Wire Line
+	7600 4400 7600 4100
+$Comp
+L GND #PWR039
+U 1 1 5DA47203
+P 6900 3950
+F 0 "#PWR039" H 6900 3700 50  0001 C CNN
+F 1 "GND" H 6900 3800 50  0000 C CNN
+F 2 "" H 6900 3950 50  0001 C CNN
+F 3 "" H 6900 3950 50  0001 C CNN
+	1    6900 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6900 3950 6900 3800
+$Comp
+L CP C10
+U 1 1 5DA47378
+P 5400 3650
+F 0 "C10" H 5425 3750 50  0000 L CNN
+F 1 "10µF" H 5425 3550 50  0000 L CNN
+F 2 "Capacitors_SMD:CP_Elec_4x5.3" H 5438 3500 50  0001 C CNN
+F 3 "" H 5400 3650 50  0001 C CNN
+F 4 "Nichicon" H 5400 3650 60  0001 C CNN "Manufacturer"
+F 5 "UWJ1C100MCL1GB" H 5400 3650 60  0001 C CNN "Manufacturer Part Number"
+	1    5400 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L IRF7606PBF Q1
+U 1 1 5DA47457
+P 4700 3550
+F 0 "Q1" H 4500 3850 50  0000 L CNN
+F 1 "DMP2040" H 4500 3300 50  0000 L CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 4700 3750 50  0001 C CIN
+F 3 "lib/datasheets/DMP2040USS.pdf" V 4700 3550 50  0001 L CNN
+F 4 "Diodes Incorporated" H 4700 3550 60  0001 C CNN "Manufacturer"
+F 5 "DMP2040USS-13" H 4700 3550 60  0001 C CNN "Manufacturer Part Number"
+	1    4700 3550
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR040
+U 1 1 5DA475DC
+P 5400 3950
+F 0 "#PWR040" H 5400 3700 50  0001 C CNN
+F 1 "GND" H 5400 3800 50  0000 C CNN
+F 2 "" H 5400 3950 50  0001 C CNN
+F 3 "" H 5400 3950 50  0001 C CNN
+	1    5400 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR041
+U 1 1 5DA47602
+P 5150 3950
+F 0 "#PWR041" H 5150 3700 50  0001 C CNN
+F 1 "GND" H 5150 3800 50  0000 C CNN
+F 2 "" H 5150 3950 50  0001 C CNN
+F 3 "" H 5150 3950 50  0001 C CNN
+	1    5150 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 3700 5150 3700
+Wire Wire Line
+	5150 3700 5150 3950
+Wire Wire Line
+	5400 3800 5400 3950
+Wire Wire Line
+	5150 3550 5000 3550
+Wire Wire Line
+	5150 3200 5150 3550
+Wire Wire Line
+	5000 3350 5850 3350
+Connection ~ 5150 3350
+Wire Wire Line
+	5000 3450 5150 3450
+Connection ~ 5150 3450
+Wire Wire Line
+	5400 3500 5400 3350
+Connection ~ 5400 3350
+Wire Wire Line
+	5700 3500 5700 3350
+Connection ~ 5700 3350
+Wire Wire Line
+	4250 3650 4400 3650
+$Comp
+L LED D2
+U 1 1 5DA47AB2
+P 7250 4100
+F 0 "D2" V 7400 4000 50  0000 C CNN
+F 1 "BLUE" H 7250 4000 50  0000 C CNN
+F 2 "LEDs:LED_0805" H 7250 4100 50  0001 C CNN
+F 3 "lib/datasheets/APHCM2012QBC-D-F01-38813.pdf" H 7250 4100 50  0001 C CNN
+F 4 "Kingbright" V 7250 4100 60  0001 C CNN "Manufacturer"
+F 5 "APHCM2012QBC/D-F01" V 7250 4100 60  0001 C CNN "Manufacturer Part Number"
+	1    7250 4100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R6
+U 1 1 5DA47AEF
+P 7250 3650
+F 0 "R6" H 7350 3800 50  0000 C CNN
+F 1 "470R" V 7250 3650 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 7180 3650 50  0001 C CNN
+F 3 "" H 7250 3650 50  0001 C CNN
+F 4 "Bourns" H 7250 3650 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-JW-471ELF" H 7250 3650 60  0001 C CNN "Manufacturer Part Number"
+	1    7250 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR042
+U 1 1 5DA47D0C
+P 7250 4400
+F 0 "#PWR042" H 7250 4150 50  0001 C CNN
+F 1 "GND" H 7250 4250 50  0000 C CNN
+F 2 "" H 7250 4400 50  0001 C CNN
+F 3 "" H 7250 4400 50  0001 C CNN
+	1    7250 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 4400 7250 4250
+Wire Wire Line
+	7250 3950 7250 3800
+Wire Wire Line
+	7250 3500 7250 3350
+Connection ~ 7250 3350
+$Comp
+L C C12
+U 1 1 5DA73980
+P 6600 3650
+F 0 "C12" H 6625 3750 50  0000 L CNN
+F 1 "330nF" H 6625 3550 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 6638 3500 50  0001 C CNN
+F 3 "" H 6600 3650 50  0001 C CNN
+F 4 "Taiyo Yuden" H 6600 3650 60  0001 C CNN "Manufacturer"
+F 5 "GMK212B7334KG-T" H 6600 3650 60  0001 C CNN "Manufacturer Part Number"
+	1    6600 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 3350 4400 3350
+Wire Wire Line
+	4250 3650 4250 3350
+Connection ~ 4250 3350
+Wire Wire Line
+	4400 3550 4250 3550
+Connection ~ 4250 3550
+Wire Wire Line
+	4400 3450 4250 3450
+Connection ~ 4250 3450
+$EndSCHEMATC
