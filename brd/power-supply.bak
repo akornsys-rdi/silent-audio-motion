@@ -40,9 +40,9 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 4
 Title "Silent Audio Motion"
-Date "2019-10-15"
+Date "2019-11-03"
 Rev "release-v0.1A"
-Comp "Akornsys RDI"
+Comp "EX arte electrónico y experimental"
 Comment1 ""
 Comment2 "Revised by: R. García"
 Comment3 "Drawn by: R. García"
@@ -125,14 +125,14 @@ $EndComp
 $Comp
 L C C14
 U 1 1 5DA46918
-P 8150 4100
-F 0 "C14" H 8175 4200 50  0000 L CNN
-F 1 "100nF" H 8175 4000 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805" H 8188 3950 50  0001 C CNN
-F 3 "" H 8150 4100 50  0001 C CNN
-F 4 "Kemet" H 8150 4100 60  0001 C CNN "Manufacturer"
-F 5 "C0805C104J5RACTU" H 8150 4100 60  0001 C CNN "Manufacturer Part Number"
-	1    8150 4100
+P 8525 4100
+F 0 "C14" H 8550 4200 50  0000 L CNN
+F 1 "100nF" H 8550 4000 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 8563 3950 50  0001 C CNN
+F 3 "" H 8525 4100 50  0001 C CNN
+F 4 "Kemet" H 8525 4100 60  0001 C CNN "Manufacturer"
+F 5 "C0805C104J5RACTU" H 8525 4100 60  0001 C CNN "Manufacturer Part Number"
+	1    8525 4100
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -162,12 +162,12 @@ $EndComp
 $Comp
 L VDDA #PWR033
 U 1 1 5DA46A5C
-P 8150 3650
-F 0 "#PWR033" H 8150 3500 50  0001 C CNN
-F 1 "VDDA" H 8150 3800 50  0000 C CNN
-F 2 "" H 8150 3650 50  0001 C CNN
-F 3 "" H 8150 3650 50  0001 C CNN
-	1    8150 3650
+P 8525 3650
+F 0 "#PWR033" H 8525 3500 50  0001 C CNN
+F 1 "VDDA" H 8525 3800 50  0000 C CNN
+F 2 "" H 8525 3650 50  0001 C CNN
+F 3 "" H 8525 3650 50  0001 C CNN
+	1    8525 3650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -219,10 +219,10 @@ $EndComp
 Wire Wire Line
 	6150 3650 6150 3950
 Wire Wire Line
-	8000 3800 8150 3800
+	8375 3800 8525 3800
 Wire Wire Line
-	8150 3650 8150 3950
-Connection ~ 8150 3800
+	8525 3650 8525 3950
+Connection ~ 8525 3800
 Wire Wire Line
 	7600 3350 7600 3500
 Wire Wire Line
@@ -231,12 +231,12 @@ Connection ~ 6900 3350
 $Comp
 L GND #PWR037
 U 1 1 5DA47167
-P 8150 4400
-F 0 "#PWR037" H 8150 4150 50  0001 C CNN
-F 1 "GND" H 8150 4250 50  0000 C CNN
-F 2 "" H 8150 4400 50  0001 C CNN
-F 3 "" H 8150 4400 50  0001 C CNN
-	1    8150 4400
+P 8525 4400
+F 0 "#PWR037" H 8525 4150 50  0001 C CNN
+F 1 "GND" H 8525 4250 50  0000 C CNN
+F 2 "" H 8525 4400 50  0001 C CNN
+F 3 "" H 8525 4400 50  0001 C CNN
+	1    8525 4400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -251,7 +251,7 @@ F 3 "" H 7600 4400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8150 4400 8150 4250
+	8525 4400 8525 4250
 Wire Wire Line
 	7600 4400 7600 4100
 $Comp
@@ -407,4 +407,19 @@ Connection ~ 4250 3550
 Wire Wire Line
 	4400 3450 4250 3450
 Connection ~ 4250 3450
+$Comp
+L R R?
+U 1 1 5F2072B2
+P 8225 3800
+F 0 "R?" V 8125 3700 50  0000 C CNN
+F 1 "220R" V 8225 3800 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 8155 3800 50  0001 C CNN
+F 3 "" H 8225 3800 50  0001 C CNN
+F 4 "Bourns" H 8225 3800 60  0001 C CNN "Manufacturer"
+F 5 "CR0805-JW-471ELF" H 8225 3800 60  0001 C CNN "Manufacturer Part Number"
+	1    8225 3800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8000 3800 8075 3800
 $EndSCHEMATC
