@@ -1,109 +1,24 @@
-/*
- * TIPOS DE FORMA DE ONDA, NO TOCAR
- */
-#define SIN         1       // SENOIDAL
-#define SAW         2       // DIENTE DE SIERRA
-#define TRI         3       // TRIANGULAR
-#define SQR         4       // CUADRADA
+#define STBY                    8
+#define APWM                    3
+#define AIN1                    6
+#define AIN2                    5
+#define BPWM                    11
+#define BIN1                    9
+#define BIN2                    10
+#define FW_L                    A0
+#define TRG_L                   A1
+#define ADJ_L                   A2
+#define FW_R                    A3
+#define TRG_R                   A4
+#define ADJ_R                   A5
+#define DEBUG                   2
 
-/*
- * DEFINICION DE LA ONDA, TOCAR AQUI
- */
-#define HZ          2.00    // NECESARIO ESTABLECER CON DOS DECIMALES
-#define VOL         1.00    // VALOR ENTRE 0.00 y 1.00, ESTABLECER CON DOS DECIMALES
-#define WAVEFORM    SIN     // ELEGIR: SIN, SAW, TRI, SQR
-//#define OSCOPE              // PERMITE VER LA ONDA DE SALIDA USANDO EL SERIAL_PLOTTER
-                            //   PUEDE AFECTAR A LA FRECUENCIA, DESCOMENTAR PARA USAR
-
-/*
- * DEFINES GENERALES, NO TOCAR
- */
-#define STBY        8
-#define APWM        3
-#define AIN1        6
-#define AIN2        5
-#define BPWM        11
-#define BIN1        9
-#define BIN2        10
-#define FW_L        A0
-#define TRG_L       A1
-#define ADJ_L       A2
-#define FW_R        A3
-#define TRG_R       A4
-#define ADJ_R       A5
-#define DEBUG       2
-#define DELAY       (1000000/(512*HZ))
-
-//https://www.daycounter.com/Calculators/Sine-Generator-Calculator2.phtml
-const unsigned char sinPWM[]={0,0,0,1,1,1,2,2,3,4,4,5,6,7,8,9,
-11,12,13,15,16,18,20,21,23,25,27,29,31,33,35,37,
-39,42,44,46,49,51,54,56,59,62,64,67,70,73,76,79,
-81,84,87,90,93,96,99,103,106,109,112,115,118,121,124,128,
-128,131,134,137,140,143,146,149,152,156,159,162,165,168,171,174,
-176,179,182,185,188,191,193,196,199,201,204,206,209,211,213,216,
-218,220,222,224,226,228,230,232,234,235,237,239,240,242,243,244,
-246,247,248,249,250,251,251,252,253,253,254,254,254,255,255,255,
-255,255,255,255,254,254,253,253,252,252,251,250,249,248,247,246,
-245,244,242,241,239,238,236,235,233,231,229,227,225,223,221,219,
-217,215,212,210,207,205,202,200,197,195,192,189,186,184,181,178,
-175,172,169,166,163,160,157,154,151,148,145,142,138,135,132,129,
-126,123,120,117,113,110,107,104,101,98,95,92,89,86,83,80,
-77,74,71,69,66,63,60,58,55,53,50,48,45,43,40,38,
-36,34,32,30,28,26,24,22,20,19,17,16,14,13,11,10,
-9,8,7,6,5,4,3,3,2,2,1,1,0,0,0,0};
-
-const unsigned char sawPWM[]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,
-16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
-32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,
-48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,
-64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,
-80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,
-96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,
-112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,
-128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,
-144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,
-160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,
-176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,
-192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,
-208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,
-224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,
-240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255};
-
-const unsigned char triPWM[]={0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,
-32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,
-64,66,68,70,72,74,76,78,80,82,84,86,88,90,92,94,
-96,98,100,102,104,106,108,110,112,114,116,118,120,122,124,126,
-128,130,132,134,136,138,140,142,144,146,148,150,152,154,156,158,
-160,162,164,166,168,170,172,174,176,178,180,182,184,186,188,190,
-192,194,196,198,200,202,204,206,208,210,212,214,216,218,220,222,
-224,226,228,230,232,234,236,238,240,242,244,246,248,250,252,254,
-254,252,250,248,246,244,242,240,238,236,234,232,230,228,226,224,
-222,220,218,216,214,212,210,208,206,204,202,200,198,196,194,192,
-190,188,186,184,182,180,178,176,174,172,170,168,166,164,162,160,
-158,156,154,152,150,148,146,144,142,140,138,136,134,132,130,128,
-126,124,122,120,118,116,114,112,110,108,106,104,102,100,98,96,
-94,92,90,88,86,84,82,80,78,76,74,72,70,68,66,64,
-62,60,58,56,54,52,50,48,46,44,42,40,38,36,34,32,
-30,28,26,24,22,20,18,16,14,12,10,8,6,4,4,0};
-
-const unsigned char sqrPWM[]={0,127,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
-255,255,255,255,255,255,255,255,255,255,255,255,255,255,127,0};
+#define BUFFER_SIZE             32  // Tamaño de buffer de datos del flujo analógico de entrada
+#define STANDBY_THRESHOLD       10  // Por debajo de este nivel permanece apagado, muestra nivel de entrada bajo
+#define SATURATION_THRESHOLD    900 // Por encima de este nivel muestra saturación de entrada
 
 void setup() {
+    analogReference(EXTERNAL);
     pinMode(STBY, OUTPUT);
     pinMode(APWM, OUTPUT);
     pinMode(AIN1, OUTPUT);
@@ -115,61 +30,163 @@ void setup() {
     pinMode(TRG_L, INPUT);
     pinMode(TRG_R, INPUT);
     TCCR2B = TCCR2B & B11111000 | B00000001;    // set timer 2 divisor to 1 for PWM frequency of 31372.55 Hz
-//#ifdef OSCOPE
+    ADCSRA = ADCSRA & B11111000 | B00000100;    // set ADC capture time divider to 16, 20µs for each capture
     Serial.begin(115200);
-//#endif
 }
 
 void loop() {
-/*    static boolean polarity = false;
-    unsigned char sample = 0;
+    static boolean input_standby_l = false;
+    static boolean input_standby_r = false;
+    static boolean input_saturation_l = false;
+    static boolean input_saturation_r = false;
+    static boolean output_clipping_l = false;
+    static boolean output_clipping_r = false;
+    static unsigned int channel_buffer_l[BUFFER_SIZE];
+    static unsigned int channel_buffer_r[BUFFER_SIZE];
+    static unsigned int peak_value_l = 0;
+    static unsigned int peak_value_r = 0;
+    static unsigned int adjust_l = 0;
+    static unsigned int adjust_r = 0;
 
-    digitalWrite(DEBUG, polarity);
-    digitalWrite(STBY, HIGH);
-    digitalWrite(AIN1, !polarity);
-    digitalWrite(AIN2, polarity);
-    for (unsigned char i = 0; i < 255; i++) {
-#if WAVEFORM == SIN
-        sample = sinPWM[i] * VOL;
-#elif WAVEFORM == SAW
-        sample = sawPWM[i] * VOL;
-#elif WAVEFORM == TRI
-        sample = triPWM[i] * VOL;
-#elif WAVEFORM == SQR
-        sample = sqrPWM[i] * VOL;
-#endif
-#ifdef OSCOPE
-        if (polarity) Serial.println(sample);
-        else Serial.println(-sample);
-#endif
-        analogWrite(APWM, sample);
-        delayMicroseconds(DELAY);
+    read_channel(channel_buffer_l, channel_buffer_r);
+    read_adjust(&adjust_l, &adjust_r); //each 250ms
+    search_peak_value(&peak_value_l, channel_buffer_l, &peak_value_r, channel_buffer_r);
+    process_channel(input_standby_l && input_standby_r, channel_buffer_l, adjust_l, channel_buffer_r, adjust_r);
+    set_status(&input_standby_l, &input_saturation_l, &output_clipping_l, peak_value_l, adjust_l, &input_standby_r, &input_saturation_r, &output_clipping_r, peak_value_r, adjust_r); //each 500ms
+    display_status(input_standby_l && input_standby_r, input_saturation_l || input_saturation_r, output_clipping_l || output_clipping_r);
+}
+
+// Lee las entradas analógicas de ambos canales y los almacena en la primera posición de un array
+// Requiere:
+//  value_l: array para el canal L, de tamaño BUFFER_SIZE
+//  value_r: array para el canal R, de tamaño BUFFER_SIZE
+void read_channel(unsigned int *value_l, unsigned int *value_r) {
+    for (int i = BUFFER_SIZE - 2; i >= 0; i--) {
+        value_l[i + 1] = value_l[i];
+        value_r[i + 1] = value_r[i];
     }
-    polarity = !polarity; */
+    value_l[0] = analogRead(FW_L);
+    value_r[0] = analogRead(FW_R);
+}
 
-    static unsigned char i = 0;
+// Lee las entradas del trimmer ADJ de ambos canales y las almacena en variables. Realiza una lectura cada 250ms
+// Requiere:
+//  adjust_l: puntero de la variable para guardar el valor del canal L
+//  adjust_r: puntero de la variable para guardar el valor del canal R
+void read_adjust(unsigned int *adjust_l, unsigned int *adjust_r) {
+    static unsigned long t = 0;
 
-    digitalWrite(STBY, HIGH);
-    digitalWrite(AIN1, HIGH);
-    digitalWrite(AIN2, LOW);
-    digitalWrite(BIN1, HIGH);
-    digitalWrite(BIN2, LOW);
-    Serial.print(analogRead(FW_L));
-    Serial.print(" ");
-    Serial.print(analogRead(ADJ_L));
-    Serial.print(" ");
-    if (digitalRead(TRG_L)) Serial.print(1024);
-    else Serial.print(0);
-    Serial.print(" ");
-    Serial.print(analogRead(FW_R));
-    Serial.print(" ");
-    Serial.print(analogRead(ADJ_R));
-    Serial.print(" ");
-    if (digitalRead(TRG_R)) Serial.println(1024);
-    else Serial.println(0);
-    digitalWrite(DEBUG, !digitalRead(DEBUG));
-    analogWrite(APWM, i);
-    analogWrite(BPWM, 255 - i);
-    i++;
-    delay(10);
+    if (millis() - t >= 250) {
+        t = millis();
+        *adjust_l = analogRead(ADJ_L);
+        *adjust_r = analogRead(ADJ_R);
+    }
+}
+
+// Busca el valor de pico de las últimas lecturas de los canales analógicos de entrada. Tamaño del buffer de búsqueda BUFFER_SIZE² samples
+// Requiere:
+//  peak_l: puntero de la variable para guardar el valor de pico del canal L
+//  value_l: array de muestras de entrada del canal L
+//  peak_r: puntero de la variable para guardar el valor de pico del canal R
+//  value_r: array de muestras de entrada del canal R
+void search_peak_value(unsigned int *peak_l, unsigned int *value_l, unsigned int *peak_r, unsigned int *value_r) {
+    unsigned int max_l = 0;
+    unsigned int max_r = 0;
+    static unsigned int counter = 0;
+    static unsigned int max_value_l[BUFFER_SIZE];
+    static unsigned int max_value_r[BUFFER_SIZE];
+
+    counter++;
+    if (counter == BUFFER_SIZE) {
+        counter = 0;
+        for (int i = 0; i < BUFFER_SIZE; i++) {
+            if (value_l[i] > max_l) max_l = value_l[i];
+            if (value_r[i] > max_r) max_r = value_r[i];
+        }
+        for (int i = BUFFER_SIZE - 2; i >= 0; i--) {
+            max_value_l[i + 1] = max_value_l[i];
+            max_value_r[i + 1] = max_value_r[i];
+        }
+        max_value_l[0] = max_l;
+        max_value_r[0] = max_r;
+    }
+    *peak_l = 0;
+    *peak_r = 0;
+    for (int i = 0; i < BUFFER_SIZE; i++) {
+        if (max_value_l[i] > *peak_l) *peak_l = max_value_l[i];
+        if (max_value_r[i] > *peak_r) *peak_r = max_value_r[i];
+    }
+}
+
+// Genera la señal de salida en función de los valores de entrada
+// Requiere:
+//  input_min: indicador de si ambas entradas están en reposo
+//  value_l: array de muestras de entrada del canal L
+//  adjust_l: valor del trimmer ADJ del canal L
+//  value_r: array de muestras de entrada del canal R
+//  adjust_r: valor del trimmer ADJ del canal R
+void process_channel(boolean input_min, unsigned int *value_l , unsigned int adjust_l, unsigned int *value_r , unsigned int adjust_r) {
+    boolean polarity_l = false;
+    boolean polarity_r = false;
+    unsigned char sample_l = 0;
+    unsigned char sample_r = 0;
+
+    if (!input_min) {
+        digitalWrite(STBY, HIGH);
+        polarity_l = digitalRead(TRG_L);
+        digitalWrite(AIN1, !polarity_l);
+        digitalWrite(AIN2, polarity_l);
+        sample_l = constrain(map(value_l[0], 0, adjust_l, 0, 255), 0, 255);
+        analogWrite(APWM, sample_l);
+        polarity_r = digitalRead(TRG_R);
+        digitalWrite(BIN1, !polarity_r);
+        digitalWrite(BIN2, polarity_r);
+        sample_r = constrain(map(value_r[0], 0, adjust_r, 0, 255), 0, 255);
+        analogWrite(BPWM, sample_r);
+    }
+    else digitalWrite(STBY, LOW);
+}
+
+// Establece los indicadores de estado. Se actualiza cada 500ms
+// Requiere:
+//  input_min_l: puntero donde se guarda el estado de entrada en reposo para el canal L
+//  input_max_l: puntero donde se guarda el estado de entrada saturada para el canal L
+//  output_l: puntero donde se guarda el estado de clipping en salida para el canal L
+//  peak_l: valor de pico de las muestras de entrada del canal L
+//  adjust_l: valor del trimmer ADJ del canal L
+//  input_min_r: puntero donde se guarda el estado de entrada en reposo para el canal R
+//  input_max_r: puntero donde se guarda el estado de entrada saturada para el canal R
+//  output_r: puntero donde se guarda el estado de clipping en salida para el canal R
+//  peak_r: valor de pico de las muestras de entrada del canal R
+//  adjust_r: valor del trimmer ADJ del canal R
+void set_status(boolean *input_min_l, boolean *input_max_l, boolean *output_l, unsigned int peak_l, unsigned int adjust_l, boolean *input_min_r, boolean *input_max_r, boolean *output_r, unsigned int peak_r, unsigned int adjust_r) {
+    static unsigned long t = 0;
+
+    if (millis() - t >= 500) {
+        t = millis();
+        if (peak_l < STANDBY_THRESHOLD) *input_min_l = true;
+        else *input_min_l = false;
+        if (peak_r < STANDBY_THRESHOLD) *input_min_r = true;
+        else *input_min_r = false;
+        if (peak_l > SATURATION_THRESHOLD) *input_max_l = true;
+        else *input_max_l = false;
+        if (peak_r > SATURATION_THRESHOLD) *input_max_r = true;
+        else *input_max_r = false;
+        if (peak_l > adjust_l) *output_l = true;
+        else *output_l = false;
+        if (peak_r > adjust_r) *output_r = true;
+        else *output_r = false;
+    }
+}
+
+// Muestra el estado actual usando un LED
+// Requiere:
+//  input_min: indicador de si ambas entradas están en reposo
+//  input_max: indicador de si alguna de las entradas está saturada
+//  output: indicador de si alguna de las salidas hace clipping
+void display_status(boolean input_min, boolean input_max, boolean output) {
+    if (input_min) digitalWrite(DEBUG, HIGH);
+    else if (input_max) digitalWrite(DEBUG, millis() & 0x20);
+    else if (output) digitalWrite(DEBUG, millis() & 0x80);
+    else digitalWrite(DEBUG, LOW);
 }
