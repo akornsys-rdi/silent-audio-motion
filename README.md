@@ -33,14 +33,9 @@ The status LED may take up to one second to respond to changes in the input.
 Load the `test_outputs` program. It should generate signals on both output channels. The test firmware can generate different output patterns.
 The test is successful when the solenoid connected to each channel moves at the frequency set in code, with the selected waveform.
 
-Cargar el programa `test_outputs`. Éste debe generar señales en ambos canales de salida. El firmware de prueba permite generar diferentes patrones de salida.
-Se considera exitoso cuando el solenoide conectado a cada canal se mueva a la frecuencia establecida en código, con la forma de onda seleccionada.
-
 ### Input stage test
 
 Load the 'test_inputs' program. The cursor of the trimmers must not be at the ends. This program must show per port the three inputs of each channel (use serial plotter). Connect an audio source with a signal below 10Hz to both channels.
-
-Cargar el programa `test_inputs`. El cursor de los trimmers no debe estar en los extremos. Este programa debe mostrar por puerto las tres entradas de cada canal (usar serial plotter). Conectar una fuente de audio con una señal inferior a los 10Hz a ambos canales.
 
 The test is successful when:
 
