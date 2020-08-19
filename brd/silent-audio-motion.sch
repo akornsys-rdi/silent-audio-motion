@@ -796,7 +796,7 @@ P 2550 6950
 F 0 "R1" H 2650 7100 50  0000 C CNN
 F 1 "20k" V 2550 6950 50  0000 C CNN
 F 2 "Potentiometers:Potentiometer_Trimmer_Bourns_3299P" H 2550 6950 50  0001 C CNN
-F 3 "" H 2550 6950 50  0001 C CNN
+F 3 "/lib/datasheets/PV36.pdf" H 2550 6950 50  0001 C CNN
 F 4 "BI Technologies" H 2550 6950 60  0001 C CNN "Manufacturer"
 F 5 "36KR20KLF" H 2550 6950 60  0001 C CNN "Manufacturer Part Number"
 	1    2550 6950
@@ -850,7 +850,7 @@ P 2550 5900
 F 0 "R2" H 2650 6050 50  0000 C CNN
 F 1 "20k" V 2550 5900 50  0000 C CNN
 F 2 "Potentiometers:Potentiometer_Trimmer_Bourns_3299P" H 2550 5900 50  0001 C CNN
-F 3 "" H 2550 5900 50  0001 C CNN
+F 3 "/lib/datasheets/PV36.pdf" H 2550 5900 50  0001 C CNN
 F 4 "BI Technologies" H 2550 5900 60  0001 C CNN "Manufacturer"
 F 5 "36KR20KLF" H 2550 5900 60  0001 C CNN "Manufacturer Part Number"
 	1    2550 5900
