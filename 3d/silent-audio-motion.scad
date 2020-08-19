@@ -200,26 +200,183 @@ module pcb() {
         union() {
             //pcb
             color("ForestGreen") cube([50,70,1.6]);
-            //pot
-            translate([50,70-0.5,1.6]) rotate([0,0,180]) for (i = [ 3.5:10.5:35 ]) {
-                color("MediumBlue") translate([i,0,0]) cube([9.5,10,4.75]);
-                color("Goldenrod") translate([i+1.25,0,3.5]) rotate([90,0,0]) cylinder(r=1.125, h=1.5);
-            }
-            //jack
-            translate([0,38.5+2.5,1.6]) union() {
-                color("DimGray") cube([12,11.5,11]);
-                color("Gainsboro") translate([0,6,2.75+3.625]) rotate([0,-90,0]) cylinder(r=3, h=3.5);
-            }
-            //conn
-            translate([-0.5,2.5,1.6]) for(i = [0:10.16:20.5]) {
-                color("LimeGreen") difference() {
-                    translate([0,i,0]) cube([9.5,10.16,15]);
-                    translate([-1,i+1.1,3]) cube([3,3,3.5]);
-                    translate([-1,i+1.1+5.08,3]) cube([3,3,3.5]);
+            //components
+            translate([0,0,1.6]) union() {
+                //jack
+                translate([0,38.5+2.5,0]) union() {
+                    color("DimGray") cube([12,11.5,11]);
+                    color("Gainsboro") translate([0,6,2.75+3.625]) rotate([0,-90,0]) cylinder(r=3, h=3.5);
+                    color("lightgray") translate([-3.5+6.5,5.75-0.5,-4]) cube([0.5,1,4]);
+                    color("lightgray") translate([-3.5+6.5+5,5.75+5-0.25,-4]) cube([1,0.5,4]);
+                    color("lightgray") translate([-3.5+6.5+5,5.75-5-0.25,-4]) cube([1,0.5,4]);
                 }
-                color("Gainsboro") translate([4.5,i+2.5,15]) cylinder(r=2, h=1);
-                color("Gainsboro") translate([4.5,i+2.5+5.08,15]) cylinder(r=2, h=1);}
+                //conn
+                translate([-0.5,2.5,0]) for(i = [0:10.16:20.5]) {
+                    color("LimeGreen") difference() {
+                        translate([0,i,0]) cube([9.5,10.16,15]);
+                        translate([-1,i+1.1,3]) cube([3,3,3.5]);
+                        translate([-1,i+1.1+5.08,3]) cube([3,3,3.5]);
+                    }
+                    color("Gainsboro") translate([4.5,i+2.5,15]) cylinder(r=2, h=1);
+                    color("Gainsboro") translate([4.5,i+2.5+5.08,15]) cylinder(r=2, h=1);
+                    color("lightgray") translate([4.75-0.45,i+2.54-0.4,-3.5]) cube([0.9,0.8,3.5]);
+                    color("lightgray") translate([4.75-0.45,i+5.08+2.54-0.4,-3.5]) cube([0.9,0.8,3.5]);
+                }
+                //QFP32
+                translate([(50 - 12.192), (70 - 45.466), 0]) union() {
+                    color("dimgrey") translate([-3.5, -3.5, 0]) cube([7, 7, 1.2]);
+                    color("lightgray") for (i = [-3:0.8:2.9]) {
+                        translate([-4.5, i, 0]) cube([9, 0.4, 0.6]);
+                    }
+                    color("lightgray") for (i = [-3:0.8:2.9]) {
+                        translate([i, -4.5, 0]) cube([0.4, 9, 0.6]);
+                    }
+                }
+                //SSOP24
+                translate([(50 - 35.052), (70 - 45.212), 0]) union() {
+                    color("dimgrey") translate([-2.8, -3.9, 0]) cube([5.6, 7.8, 1.6]);
+                    color("lightgray") for (i = [-3.575:0.65:3.575]) {
+                        translate([-3.8, i - 0.11, 0]) cube([7.6, 0.22, 0.8]);
+                    }
+                }
+                //TSSOP14
+                for (i = [ [(50 - 8.128), (70 - 25.146), 0], [(50 - 27.686), (70 - 25.146), 0], [(50 - 21.028), (70 - 15.494), 0] ]) {
+                    translate(i) union() {
+                        color("dimgrey") translate([-2.2, -2.5, 0]) cube([4.4, 5, 1]);
+                        color("lightgray") for (j = [-1.96:0.65:1.96]) {
+                            translate([-3.2, j - 0.11, 0]) cube([6.4, 0.22, 0.5]);
+                        }
+                    }
+                }
+                //SOIC8
+                translate([(50 - 36.068), (70 - 59.944), 0]) union() {
+                    color("dimgrey") translate([-1.95, -2.45, 0]) cube([3.9, 4.9, 1.75]);
+                    color("lightgray") for (i = [-1.905, -0.635, 0.635, 1.905]) {
+                        translate([-3.05, i - 0.255, 0]) cube([6.1, 0.51, 1.13]);
+                    }
+                }
+                //DPAK-3
+                translate([(50 - 28.448), (70 - 61.976), 0]) rotate([0,0,90]) union() {
+                    color("dimgrey") translate([-2.985, -3.175, 0]) cube([5.97, 6.35, 2.18]);
+                    color("lightgray") translate([0, -2.285, 0]) cube([0.89+2.985, 4.57, 0.46]);
+                    color("lightgray") for (i = [-2.29, 2.29]) {
+                        translate([-2.985-2.9, i - 0.315, 0]) cube([2.9, 0.63, 1.09]);
+                    }
+                    color("lightgray") translate([-2.985-0.89, -0.315, 0]) cube([0.89, 0.63, 1.09]);
+                }
+                //SOT23-3
+                translate([(50 - 7.366), (70 - 54.102), 0]) rotate([0,0,90]) union() {
+                    color("dimgrey") translate([-0.875, -1.525, 0]) cube([1.75, 3.05, 1.1]);
+                    color("lightgray") for (i = [-0.95, 0.95]) {
+                        translate([0, i - 0.25, 0]) cube([1.525, 0.5, 0.6]);
+                    }
+                    color("lightgray") translate([-1.525, -0.25, 0]) cube([1.525, 0.5, 0.6]);
+                }
+                //SOD-123 D
+                for (i = [ [(50 - 11.43), (70 - 18.542), 0], [(50 - 8.636), (70 - 31.75), 0], [(50 - 11.176), (70 - 31.75), 0], [(50 - 30.988), (70 - 18.542), 0], [(50 - 28.194), (70 - 31.75), 0], [(50 - 30.734), (70 - 31.75), 0] ]) {
+                    translate(i) rotate([0,0,90]) union() {
+                        color("dimgrey") translate([-1.425, -0.9, 0]) cube([2.85, 1.8, 1.17]);
+                        color("lightgray") translate([-1.95, -0.35, 0]) cube([3.9, 0.7, 0.585]);
+                    }
+                }
+                //0805 LED
+                translate([(50 - 3.556), (70 - 40.64), 0]) union() {
+                    color("lightsalmon") translate([-0.6, -0.625, 0.3]) cube([1.2, 1.25, 0.5]);
+                    color("ivory") translate([-0.6, -0.625, 0]) cube([1.2, 1.25, 0.3]);
+                    color("lightgray") for (i = [-0.8, 0.8]) {
+                        translate([i - 0.2, -0.625, 0]) cube([0.4, 1.25, 0.35]);
+                    }
+                }
+                translate([(50 - 47.752), (70 - 68.58), 0]) union() {
+                    color("lightskyblue") translate([-0.6, -0.625, 0.3]) cube([1.2, 1.25, 0.5]);
+                    color("ivory") translate([-0.6, -0.625, 0]) cube([1.2, 1.25, 0.3]);
+                    color("lightgray") for (i = [-0.8, 0.8]) {
+                        translate([i - 0.2, -0.625, 0]) cube([0.4, 1.25, 0.35]);
+                    }
+                }
+                //XTAL
+                translate([(50 - 22.606), (70 - 45.974), 0]) rotate([0,0,90]) {
+                    color("dimgrey") translate([-5.7, -2.35, 0]) cube([11.4, 4.7, 0.75]);
+                    color("silver") hull() {
+                        translate([3.31,0,0]) cylinder(r=1.84, h=4.3, $fn=8);
+                        translate([-3.31,0,0]) cylinder(r=1.84, h=4.3, $fn=8);
+                    }
+                    color("lightgray") translate([-6.15, -0.35, 0]) cube([12.3, 0.7, 0.4]);
+                }
+                //pv36
+                translate([50,70-0.5,0]) rotate([0,0,180]) for (i = [ 3.5:10.5:35 ]) {
+                    color("MediumBlue") translate([i,0,0]) cube([9.5,9.5,4.75]);
+                    color("Goldenrod") translate([i+1.25,0,3.5]) rotate([90,0,0]) cylinder(r=1.125, h=1.5);
+                    color("lightgray") translate([i+4.75-2.54,10-5.23,-3]) cylinder(r=0.35, h=3);
+                    color("lightgray") translate([i+4.75,10-5.23-2.54,-3]) cylinder(r=0.35, h=3);
+                    color("lightgray") translate([i+4.75+2.54,10-5.23,-3]) cylinder(r=0.35, h=3);
+                }
+                //0805 R
+                for (i = [ [(50 - 43.18), (70 - 68.58), 0], [(50 - 14.478), (70 - 68.58), 0], [(50 - 3.556), (70 - 42.672), 0], [(50 - 15.24), (70 - 28.194), 0], [(50 - 15.24), (70 - 26.162), 0], [(50 - 15.24), (70 - 24.13), 0], [(50 - 15.24), (70 - 22.098), 0], [(50 - 12.192), (70 - 14.986), 0], [(50 - 34.798), (70 - 28.194), 0], [(50 - 34.798), (70 - 26.162), 0], [(50 - 34.798), (70 - 24.13), 0], [(50 - 34.798), (70 - 22.098), 0], [(50 - 31.75), (70 - 14.986), 0] ]) {
+                    translate(i) union() {
+                        color("slategray") translate([-0.775, -0.625, 0]) cube([1.55, 1.25, 0.5]);
+                        color("lightgray") for (i = [-0.825, 0.825]) {
+                            translate([i - 0.175, -0.65, 0]) cube([0.35, 1.3, 0.55]);
+                        }
+                    }
+                }
+                for (i = [ [(50 - 10.16), (70 - 54.102), 0], [(50 - 26.416), (70 - 45.974), 0], [(50 - 6.35), (70 - 31.75), 0], [(50 - 13.716), (70 - 31.75), 0], [(50 - 15.748), (70 - 31.75), 0], [(50 - 13.716), (70 - 18.542), 0], [(50 - 25.908), (70 - 31.75), 0], [(50 - 33.274), (70 - 31.75), 0], [(50 - 35.306), (70 - 31.75), 0], [(50 - 33.274), (70 - 18.542), 0] ]) {
+                    translate(i) rotate([0,0,90]) union() {
+                        color("slategray") translate([-0.775, -0.625, 0]) cube([1.55, 1.25, 0.5]);
+                        color("lightgray") for (i = [-0.825, 0.825]) {
+                            translate([i - 0.175, -0.65, 0]) cube([0.35, 1.3, 0.55]);
+                        }
+                    }
+                }
+                //4x5.3 C ELEC
+                for (i = [ [(50 - 36.068), (70 - 65.024), 0], [(50 - 35.052), (70 - 52.324), 0] ]) {
+                    translate(i) {
+                        color("dimgrey") translate([-2.15, -2.15, 0]) cube([4.3, 4.3, 1]);
+                        color("silver") cylinder(r=2, h=5.3, $fn=8);
+                        color("lightgray") translate([-2.3, -0.35, 0]) cube([4.6, 0.7, 0.3]);
+                    }
+                }
+                //0805 C
+                for (i = [ [(50 - 36.068), (70 - 68.58), 0], [(50 - 28.448), (70 - 68.58), 0], [(50 - 9.906), (70 - 68.58), 0], [(50 - 35.052), (70 - 55.88), 0], [(50 - 35.052), (70 - 39.37), 0], [(50 - 11.684), (70 - 38.796), 0], [(50 - 27.686), (70 - 21.082), 0], [(50 - 8.128), (70 - 21.082), 0], [(50 - 21.082), (70 - 11.43), 0] ]) {
+                    translate(i) union() {
+                        color("tan") translate([-0.8, -0.625, 0]) cube([1.6, 1.25, 1]);
+                        color("lightgray") for (i = [-0.775, 0.775]) {
+                            translate([i  -0.125, -0.65, 0]) cube([0.25, 1.3, 1.05]);
+                        }
+                    }
+                }
+                for (i = [ [(50 - 26.416), (70 - 50.8), 0], [(50 - 26.416), (70 - 41.148), 0], [(50 - 16.256), (70 - 54.102), 0], [(50 - 14.224), (70 - 54.102), 0], [(50 - 12.192), (70 - 54.102), 0], [(50 - 4.572), (70 - 54.118), 0] ]) {
+                    translate(i) rotate([0,0,90]) union() {
+                        color("tan") translate([-0.8, -0.625, 0]) cube([1.6, 1.25, 1]);
+                        color("lightgray") for (i = [-0.775, 0.775]) {
+                            translate([i  -0.125, -0.65, 0]) cube([0.25, 1.3, 1.05]);
+                        }
+                    }
+                }
+                //0805 L
+                translate([(50 - 18.288), (70 - 54.102), 0]) rotate([0,0,90]) union() {
+                    color("darkgray") translate([-0.775, -0.625, 0]) cube([1.55, 1.25, 0.5]);
+                    color("lightgray") for (i = [-0.825, 0.825]) {
+                        translate([i - 0.175, -0.65, 0]) cube([0.35, 1.3, 0.55]);
+                    }
+                }
+            }
         }
+        //conn 1x04
+        union() {
+            for (i = [0:2.54:7.62] ) {
+                translate([(50 - 1.778),(70 - 45.466) - i,-1]) cylinder(r=0.5, h=3);
+            }
+        }
+        //conn 2x03
+        union() {
+            for (i = [0:2.54:5.08] ) {
+                for (j = [0:2.54:2.54] ) {
+                    translate([(50 - 17.018) + i,(70 - 63.5) + j,-1]) cylinder(r=0.5, h=3);
+                }
+            }
+        }
+        //taladros
         union () {
             translate([46.75,3.75,-1]) cylinder(r=1.5, h=3);
             translate([46.75,55.5,-1]) cylinder(r=1.5, h=3);
